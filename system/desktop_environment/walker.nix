@@ -8,10 +8,9 @@ in
     environment.systemPackages = [
       inputs.walker.packages.${pkgs.system}.default
     ];
-
-  };
-  programs.walker = {
-    enable = true;
-    runAsService = desktop_environment.walker.run_as_service;
+    inputs.walker.programs.walker = {
+      enable = true;
+      runAsService = desktop_environment.walker.run_as_service;
+    };
   };
 }
