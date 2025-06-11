@@ -9,22 +9,19 @@ in
     };
     home-manager.sharedModules = [
       {
-        programs.niri = {
-          enable = true;
-          settings = {
-            binds = with config.lib.niri.actions; {
-              "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
-              "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
-              "Mod+T".action = spawn "ghostty";
-              "Mod+Shift+E".action = quit;
-            };
-            input = {
-              keyboard.xkb = {
-                variant = config.nirix.system.keyboard.variant;
-              };
-            };
-            prefer-no-csd = niri.prefer_no_csd;
+        settings = {
+          binds = with config.lib.niri.actions; {
+            "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
+            "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
+            "Mod+T".action = spawn "ghostty";
+            "Mod+Shift+E".action = quit;
           };
+          input = {
+            keyboard.xkb = {
+              variant = config.nirix.system.keyboard.variant;
+            };
+          };
+          prefer-no-csd = niri.prefer_no_csd;
         };
       }
     ];
