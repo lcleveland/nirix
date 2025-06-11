@@ -83,6 +83,15 @@
           };
         };
         desktop_environment = {
+          ly = {
+            enable = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
+        Whether to enable Ly.
+        '';
+            };
+          };
           niri = {
             enable = lib.mkOption {
               type = lib.types.bool;
