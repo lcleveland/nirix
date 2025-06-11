@@ -83,12 +83,21 @@
           };
         };
         desktop_environment = {
-          niri.enable = lib.mkOption {
-            type = lib.types.bool;
-            default = true;
-            description = ''
+          niri = {
+            enable = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
         Whether to enable Niri.
         '';
+            };
+            prefer_no_csd = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
+        Whether to prefer no CSD.
+      '';
+            };
           };
           sddm = {
             enable = lib.mkOption {
