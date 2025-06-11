@@ -7,7 +7,7 @@
       import_modules = import ./resources/nix/import_modules.nix;
       core_modules = import_modules ./system ++
         nirix_users.nixosModules.default ++
-        inputs.walker.packages.${pkgs.system}.default ++ [
+        inputs.walker.packages.${config.nirix.system.nix.host_platform}.default ++ [
         home_manager.nixosModules.home-manager
         niri.nixosModules.niri
         ./options.nix
