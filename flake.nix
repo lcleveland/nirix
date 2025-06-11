@@ -15,6 +15,7 @@
           /etc/nixos/hardware-configuration.nix
         ];
       pkgs = import nixpkgs {
+        system = "x86_64-linux";
         overlays = [ niri.overlays.niri ];
       };
       make_framework_16 = pkgs.lib.nixosSystem {
