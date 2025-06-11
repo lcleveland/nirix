@@ -1,9 +1,9 @@
 { config, inputs, lib, pkgs, ... }:
 let
-  niri = config.nirix.system.desktop_environment.niri;
+  desktop_environment = config.nirix.system.desktop_environment;
 in
 {
-  config = lib.mkIf niri.enable {
+  config = lib.mkIf desktop_environment.niri.enable {
     programs = {
       niri.enable = true;
     };
@@ -15,7 +15,7 @@ in
             "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
             "Mod+T".action.spawn = "ghostty";
             "Mod+Shift+Q".action.quit.skip-confirmation = true;
-            "Mod+Q".action = "close-window";
+            "Mod+Q".action = niri.action.close-window;
           };
           input = {
             keyboard.xkb = {
