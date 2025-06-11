@@ -4,6 +4,6 @@ let
 in
 {
   config = lib.mkIf desktop_environment.ly.enable {
-    services.display-manager.ly.enable = true;
+    services.displayManager.ly.enable = true;
   };
 }
