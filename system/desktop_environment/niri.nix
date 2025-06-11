@@ -15,7 +15,7 @@ in
             "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
             "Mod+T".action.spawn = "ghostty";
             "Mod+Shift+Q".action.quit.skip-confirmation = true;
-            "Mod+Q".action = inputs.niri.lib.niri.actions.close-window;
+            "Mod+Q".action = pkgs.niri-stable.confi.lib.niri.actions.close-window;
           };
           input = {
             keyboard.xkb = {
