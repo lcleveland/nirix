@@ -4,7 +4,7 @@ let
 in
 {
   config = lib.mkIf niri.enable {
-    programs = {
+    inputs.niri.nixosModules.niri.programs = {
       niri.enable = true;
     };
     home-manager.sharedModules = [
