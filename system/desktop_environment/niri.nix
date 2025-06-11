@@ -10,7 +10,7 @@ in
     home-manager.sharedModules = [
       {
         programs.niri.settings = {
-          binds = with inputs.niri.nixosModules.niri.config.lib.niri.actions; {
+          binds = {
             "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
             "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
             "Mod+T".action.spawn = "ghostty";
