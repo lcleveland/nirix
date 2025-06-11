@@ -11,9 +11,6 @@
           home_manager.nixosModules.home-manager
           niri.nixosModules.niri
           walker.nixosModules.default
-          {
-            nixpkgs.overlays = [ niri.overlays.niri ];
-          }
           ./options.nix
           /etc/nixos/hardware-configuration.nix
         ];
