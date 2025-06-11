@@ -9,11 +9,10 @@ in
     };
     home-manager.sharedModules = [
       {
-        programs.niri.settings = with config.lib.niri.actions;{
+        programs.niri.settings = {
           binds = {
-            "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
-            "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
-            "Mod+T".action = spawn "ghostty";
+            "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
+            "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
           };
           input = {
             keyboard.xkb = {
