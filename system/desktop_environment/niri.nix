@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, home-manager, inputs, lib, pkgs, ... }:
 let
   niri = config.nirix.system.desktop_environment.niri;
 in
