@@ -16,7 +16,7 @@
         ];
       make_framework_16 = nixpkgs.lib.nixosSystem {
         modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit core_inputs; };
       };
     in
     {
