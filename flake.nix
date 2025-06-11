@@ -20,6 +20,7 @@
       };
     in
     {
+      nixpkgs.overlays = [ niri.overlays.niri ];
       nixosConfigurations = {
         fw16 = make_framework_16;
       };
