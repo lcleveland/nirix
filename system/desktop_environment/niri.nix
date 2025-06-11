@@ -17,6 +17,7 @@ in
           };
           input = {
             keyboard.xkb = {
+              layout = config.nirix.system.keyboard.layout;
               variant = config.nirix.system.keyboard.variant;
             };
           };
