@@ -15,5 +15,10 @@ in
         experimental-features = lib.mkIf nix.flake.enable "nix-command flakes";
       };
     };
+    nixpkgs = {
+      hostPlatform = nix.host_platform;
+      config.allowUnfree = nix.allow_unfree_software;
+    };
+    system.stateVersion = nix.state_version;
   };
 }
