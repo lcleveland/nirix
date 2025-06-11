@@ -1,4 +1,4 @@
-{ config, home-manager, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 let
   niri = config.nirix.system.desktop_environment.niri;
 in
@@ -15,7 +15,7 @@ in
             "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
             "Mod+T".action.spawn = "ghostty";
             "Mod+Shift+Q".action.quit.skip-confirmation = true;
-            "Mod+Q".action = home-manager.config.lib.niri.actions.close-window;
+            "Mod+Q".action = config.lib.niri.actions.close-window;
           };
           input = {
             keyboard.xkb = {
