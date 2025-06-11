@@ -3,7 +3,7 @@
 
   outputs = { self, home_manager, hyprpanel, niri, nirix_users, nixos_hardware, nixpkgs, walker, ... }@core_inputs:
     let
-      inputs = core_inputs;
+      inputs = core_inputs // nirix.inputs;
       import_modules = import ./resources/nix/import_modules.nix;
       core_modules = import_modules ./system ++
         nirix_users.nixosModules.default ++
