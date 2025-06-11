@@ -7,7 +7,7 @@ in
     programs = {
       niri.enable = true;
     };
-    home_manager.sharedModules = [
+    home_manager.home-manager.sharedModules = [
       {
         settings = {
           binds = with config.lib.niri.actions; {
