@@ -28,7 +28,7 @@
   inputs = {
     home_manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager?ref=release-25.05";
+      url = "github:nix-community/home-manager";
     };
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
