@@ -1,4 +1,4 @@
-{ config, home-manager, inputs, lib, pkgs, ... }:
+{ config, home_manager, inputs, lib, pkgs, ... }:
 let
   niri = config.nirix.system.desktop_environment.niri;
 in
@@ -7,10 +7,10 @@ in
     programs = {
       niri.enable = true;
     };
-    home-manager.sharedModules = [
+    home_manager.sharedModules = [
       {
         settings = {
-          binds = with inputs.niri.lib.niri.actions; {
+          binds = with config.lib.niri.actions; {
             "XF86AudioRaiseVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+";
             "XF86AudioLowerVolume".action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-";
             "Mod+T".action = spawn "ghostty";
