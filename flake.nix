@@ -1,7 +1,7 @@
 {
   description = "Nirix: A minimal, keyboard-centric NixOS configuration using the Niri TWM";
 
-  outputs = { self, home_manager, niri, nirix_users, nixos_hardware, nixpkgs, ... }@core_inputs:
+  outputs = { self, home_manager, niri, nirix_users, nixos_hardware, nixpkgs, walker, ... }@core_inputs:
     let
       inputs = core_inputs;
       import_modules = import ./resources/nix/import_modules.nix;
@@ -40,6 +40,9 @@
     };
     nixpkgs = {
       url = "github:nixos/nixpkgs?ref=25.05";
+    };
+    walker = {
+      url = "github:abenz1267/walker";
     };
   };
 }
