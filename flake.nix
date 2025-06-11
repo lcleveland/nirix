@@ -27,15 +27,16 @@
 
   inputs = {
     home_manager = {
+      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
     hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:Jas-SinghFSU/HyprPanel";
     };
     niri = {
-      url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:sodiboo/niri-flake";
     };
     nirix_users = {
       url = "github:lcleveland/nirix.users";
