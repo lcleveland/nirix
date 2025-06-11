@@ -12,6 +12,13 @@
           '';
         };
         applications = {
+          ghostty.enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = ''
+              Whether to enable Ghostty.
+            '';
+          };
           libvirt.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
