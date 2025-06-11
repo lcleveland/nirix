@@ -5,7 +5,8 @@ in
 {
   config = lib.mkIf desktop_environment.walker.enable {
     programs.walker = {
-      enable = true;
+      enable = desktop_environment.walker.enable;
+      runAsService = desktop_environment.walker.run_as_service;
     };
   };
 }
