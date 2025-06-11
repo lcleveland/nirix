@@ -4,13 +4,5 @@ let
   nix = config.nirix.system.nix;
 in
 {
-  config = lib.mkIf desktop_environment.walker.enable {
-    environment.systemPackages = [
-      (inputs.walker.packages.${nix.host_platform}.default.override
-        {
-          options.walker.enable = true;
-        }
-      )
-    ];
-  };
+  config = lib.mkIf desktop_environment.walker.enable { };
 }
