@@ -91,133 +91,133 @@
         '';
           };
         };
-      };
-      fingerprint.enable = lib.mkOption {
-        type = lib.types.bool;
-        default = true;
-        description = ''
+        fingerprint.enable = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+          description = ''
             Whether to enable fingerprint support.
           '';
-      };
-      framework.enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = ''
+        };
+        framework.enable = lib.mkOption {
+          type = lib.types.bool;
+          default = false;
+          description = ''
             Whether to enable Framework laptop support.
           '';
-      };
-      keyboard = {
-        layout = lib.mkOption {
-          type = lib.types.str;
-          default = "us";
-          description = ''
+        };
+        keyboard = {
+          layout = lib.mkOption {
+            type = lib.types.str;
+            default = "us";
+            description = ''
               The keyboard layout to use.
             '';
-        };
-        variant = lib.mkOption {
-          type = lib.types.str;
-          default = "";
-          description = ''
+          };
+          variant = lib.mkOption {
+            type = lib.types.str;
+            default = "";
+            description = ''
               The keyboard variant to use.
             '';
+          };
         };
-      };
-      language.locale = lib.mkOption {
-        type = lib.types.str;
-        default = "en_US.UTF-8";
-        description = ''
+        language.locale = lib.mkOption {
+          type = lib.types.str;
+          default = "en_US.UTF-8";
+          description = ''
             The locale to use.
           '';
-      };
-      network = {
-        hostname = lib.mkOption {
-          type = lib.types.str;
-          default = "nirix";
-          description = ''
+        };
+        network = {
+          hostname = lib.mkOption {
+            type = lib.types.str;
+            default = "nirix";
+            description = ''
               The hostname to use.
             '';
-        };
-        network_manager.enable = lib.mkOption {
-          type = lib.types.bool;
-          default = true;
-          description = ''
+          };
+          network_manager.enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = ''
               Whether to enable the network manager.
             '';
+          };
         };
-      };
-      nix = {
-        allow_unfree_software = lib.mkOption {
-          type = lib.types.bool;
-          default = true;
-          description = ''
+        nix = {
+          allow_unfree_software = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = ''
               Whether to allow unfree software to be installed.
             '';
-        };
-        flake.enable = lib.mkOption {
-          type = lib.types.bool;
-          default = true;
-          description = ''
+          };
+          flake.enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = ''
         Whether to enable the Nix flake feature.
       '';
-        };
-        host_platform = lib.mkOption {
-          type = lib.types.enum [ "x86_64-linux" ];
-          default = "x86_64-linux";
-          description = ''
+          };
+          host_platform = lib.mkOption {
+            type = lib.types.enum [ "x86_64-linux" ];
+            default = "x86_64-linux";
+            description = ''
         The host platform.
       '';
-        };
-        state_version = lib.mkOption {
-          type = lib.types.str;
-          default = "25.05";
-          description = ''
+          };
+          state_version = lib.mkOption {
+            type = lib.types.str;
+            default = "25.05";
+            description = ''
         The state version.
       '';
-        };
-        store_optimization.enable = lib.mkOption {
-          type = lib.types.bool;
-          default = true;
-          description = ''
+          };
+          store_optimization.enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = ''
         Whether to enable store optimization.
       '';
-        };
-        garbage_collection = {
-          enable = lib.mkOption {
-            type = lib.types.bool;
-            default = true;
-            description = ''
+          };
+          garbage_collection = {
+            enable = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
           Whether to enable garbage collection.
         '';
-          };
-          automatic = lib.mkOption {
-            type = lib.types.bool;
-            default = true;
-            description = ''
+            };
+            automatic = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
           Whether to enable automatic garbage collection.
         '';
-          };
-          dates = lib.mkOption {
-            type = lib.types.str;
-            default = "weekly";
-            description = ''
+            };
+            dates = lib.mkOption {
+              type = lib.types.str;
+              default = "weekly";
+              description = ''
           The dates to garbage collect.
         '';
-          };
-          options = lib.mkOption {
-            type = lib.types.str;
-            default = "--delete-older-than 7d";
-            description = ''
+            };
+            options = lib.mkOption {
+              type = lib.types.str;
+              default = "--delete-older-than 7d";
+              description = ''
           The options to pass to nix-store --optimize.
         '';
+            };
           };
         };
-      };
-      time.time_zone = lib.mkOption {
-        type = lib.types.str;
-        default = "America/Chicago";
-        description = ''
+        time.time_zone = lib.mkOption {
+          type = lib.types.str;
+          default = "America/Chicago";
+          description = ''
             The time zone to use.
           '';
+        };
       };
     };
   };
