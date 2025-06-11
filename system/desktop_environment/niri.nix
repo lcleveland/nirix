@@ -1,4 +1,4 @@
-{ config, home_manager, inputs, lib, pkgs, ... }:
+{ config, home-manager, inputs, lib, pkgs, ... }:
 let
   niri = config.nirix.system.desktop_environment.niri;
 in
@@ -7,7 +7,7 @@ in
     programs = {
       niri.enable = true;
     };
-    home_manager.home-manager.sharedModules = [
+    home-manager.sharedModules = [
       {
         settings = {
           binds = with config.lib.niri.actions; {
