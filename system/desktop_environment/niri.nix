@@ -16,6 +16,11 @@ in
             "Mod+T".action = spawn "ghostty";
             "Mod+Shift+E".action = quit;
           };
+          input = {
+            keyboard.xkb = {
+              variant = config.nirix.system.keyboard.variant;
+            };
+          };
           prefer-no-csd = niri.prefer_no_csd;
         };
       }
