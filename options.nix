@@ -11,6 +11,22 @@
             Whether to allow users to be added to the system.
           '';
         };
+        application = {
+          libvirt.enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = ''
+              Whether to enable libvirt.
+            '';
+          };
+          qemu.enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = ''
+              Whether to enable qemu.
+            '';
+          };
+        };
         bluetooth.enable = lib.mkOption {
           type = lib.types.bool;
           default = true;
