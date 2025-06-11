@@ -1,18 +1,18 @@
 {
   description = "Nirix: A minimal, keyboard-centric NixOS configuration using the Niri TWM";
 
-  outputs = { self, home_manager, niri, nirix_users, nixos_hardware, nixpkgs, pkgs, walker, ... }@core_inputs:
+  outputs = { self, home_manager, niri, nirix_users, nixos_hardware, nixpkgs, walker, ... }@core_inputs:
     let
       inputs = core_inputs;
       import_modules = import ./resources/nix/import_modules.nix;
       core_modules = import_modules ./system ++
         nirix_users.nixosModules.default ++
-        inputs.walker.packages.${pkgs.system}.default ++ [
-        home_manager.nixosModules.home-manager
-        niri.nixosModules.niri
-        ./options.nix
-        /etc/nixos/hardware-configuration.nix
-      ];
+        [
+          home_manager.nixosModules.home-manager
+          niri.nixosModules.niri
+          ./options.nix
+          /etc/nixos/hardware-configuration.nix
+        ];
       make_framework_16 = nixpkgs.lib.nixosSystem {
         modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
         specialArgs = { inherit inputs; };
