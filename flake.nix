@@ -15,7 +15,7 @@
           /etc/nixos/hardware-configuration.nix
         ];
       make_framework_16 = nixpkgs.lib.nixosSystem {
-        modules = lib.mkMerge core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
+        modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
         specialArgs = { inherit inputs; };
       };
     in
