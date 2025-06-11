@@ -8,7 +8,7 @@ in
     environment.systemPackages = [
       (inputs.walker.packages.${nix.host_platform}.default.override
         {
-          config.programs.enable = true;
+          enable = true;
         }
       )
     ];
