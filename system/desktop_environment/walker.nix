@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ inputs, lib, pkgs, ... }:
 let
   desktop_environment = config.nirix.system.desktop_environment;
   nix = config.nirix.system.nix;
