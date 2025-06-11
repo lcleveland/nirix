@@ -11,14 +11,13 @@
           home_manager.nixosModules.home-manager
           niri.nixosModules.niri
           walker.nixosModules.default
+          {
+            nixpkgs.overlays = [ niri.overlays.niri ];
+          }
           ./options.nix
           /etc/nixos/hardware-configuration.nix
         ];
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        overlays = [ niri.overlays.niri ];
-      };
-      make_framework_16 = pkgs.lib.nixosSystem {
+      make_framework_16 = nixpkgs.lib.nixosSystem {
         modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
         specialArgs = { inherit inputs; };
       };
