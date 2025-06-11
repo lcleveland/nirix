@@ -10,7 +10,6 @@
         [
           home_manager.nixosModules.home-manager
           niri.nixosModules.niri
-          niri.homeModules.config
           walker.nixosModules.default
           ./options.nix
           /etc/nixos/hardware-configuration.nix
