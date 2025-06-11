@@ -99,6 +99,22 @@
         '';
             };
           };
+          walker = {
+            enable = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
+                Whether to enable the Walker desktop environment.
+              '';
+            };
+            run_as_service = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
+                Whether to run the Walker launcher as a service.
+              '';
+            };
+          };
           waybar.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
