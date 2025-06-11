@@ -11,7 +11,7 @@
             Whether to allow users to be added to the system.
           '';
         };
-        application = {
+        applications = {
           libvirt.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
