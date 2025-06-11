@@ -6,7 +6,7 @@ in
 {
   config = lib.mkIf desktop_environment.walker.enable {
     environment.systemPackages = [
-      (inputs.walker.${nix.host_platform}.default.override {
+      (inputs.walker.${pkgs.system}.default.override {
         programs.enable = true;
       }
       )
