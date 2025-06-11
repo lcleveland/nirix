@@ -14,7 +14,10 @@
           ./options.nix
           /etc/nixos/hardware-configuration.nix
         ];
-      make_framework_16 = nixpkgs.lib.nixosSystem {
+      pkgs = import nixpkgs {
+        overlays = [ niri.overlays.niri ];
+      };
+      make_framework_16 = pkgs.lib.nixosSystem {
         modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
         specialArgs = { inherit inputs; };
       };
