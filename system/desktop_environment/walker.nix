@@ -4,11 +4,9 @@ let
   nix = config.nirix.system.nix;
 in
 {
-  imports = [
-    inputs.walker.${nix.host_platform}.default
-  ];
-  programs.walker = {
-    enable = desktop_environment.walker.enable;
-    runAsService = desktop_environment.walker.run_as_service;
+  config = lib.mkIf desktop_environment.walker.enable {
+    environment.systemPackages = [
+      (inputs.walker.packages.${pkgs.system}.default)
+    ];
   };
 }
