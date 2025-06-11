@@ -6,8 +6,8 @@
       inputs = core_inputs;
       import_modules = import ./resources/nix/import_modules.nix;
       core_modules = import_modules ./system ++
+        nirix_users.nixosModules.default ++
         [
-          nirix_users.nixosModules.default
           home_manager.nixosModules.home-manager
           niri.nixosModules.niri
           walker.nixosModules.default
