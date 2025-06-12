@@ -97,6 +97,15 @@
           };
         };
         desktop_environment = {
+          hypridle = {
+            enable = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
+        Whether to enable Hypridle.
+      '';
+            };
+          };
           hyprlock = {
             enable = lib.mkOption {
               type = lib.types.bool;
