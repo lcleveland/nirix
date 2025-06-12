@@ -90,6 +90,15 @@
           };
         };
         desktop_environment = {
+          iwmenu = {
+            enable = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
+                Whether to enable iwmenu.
+              '';
+            };
+          };
           ly = {
             enable = lib.mkOption {
               type = lib.types.bool;
