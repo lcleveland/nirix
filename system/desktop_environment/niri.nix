@@ -12,9 +12,9 @@ in
     home-manager.sharedModules = [
       {
         programs.niri.config = [
-          lib.mkIf
-          settings.desktop_environment.niri.prefer_no_csd
-          (flag "prefer-no-csd")
+          (lib.mkIf
+            settings.desktop_environment.niri.prefer_no_csd
+            (flag "prefer-no-csd"))
           (leaf "spawn-at-startup" [ "hyprpanel" ])
           (plain "input" [
             (plain "keyboard" [
