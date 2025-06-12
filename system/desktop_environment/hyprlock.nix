@@ -4,7 +4,6 @@ let
 in
 {
   config = lib.mkIf desktop_environment.hyprlock.enable {
-    programs.hyprlock.enable = true;
     security.pam.services.hyprlock = { };
     home-manager.sharedModules = [
       {
