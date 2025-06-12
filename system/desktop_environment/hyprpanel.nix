@@ -1,4 +1,4 @@
-{ config, home-manager, lib, pkgs, ... }:
+{ config, home-manager, hyprpanel, lib, pkgs, ... }:
 let
   desktop_environment = config.nirix.system.desktop_environment;
 in
