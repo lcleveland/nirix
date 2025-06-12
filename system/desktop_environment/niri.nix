@@ -21,6 +21,13 @@ in
               ])
             ])
           ])
+          (plain "hotkey-overlay" [
+            (flag "skip-at-startup")
+          ])
+          (plain "binds" [
+            (plain "Mod+T" [ (leaf "spawn" [ "ghostty" ]) ])
+            (plain "Mod+Q" [ (flag "close-window") ])
+          ])
         ];
       }
     ];
