@@ -25,6 +25,7 @@ in
             ])
             (plain "touchpad" [
               (flag "natural-scroll")
+              (flag "tap")
             ])
           ])
           (plain "hotkey-overlay" [
