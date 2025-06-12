@@ -38,6 +38,7 @@ in
                 format-wifi = "{essid} ({signalStrength}%) ";
                 format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
                 format-disconnected = "Disconnected ⚠";
+                on-click = "iwmenu -l walker";
               };
               "pulseaudio" = {
                 format = "{volume}%  {icon}";
