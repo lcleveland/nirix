@@ -24,7 +24,7 @@ in
                 format = "{}% ";
               };
               "battery" = {
-                bat = "BAT0";
+                bat = "BAT1";
                 adapter = "AC";
                 states = {
                   good = 85;
