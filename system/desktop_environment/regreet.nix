@@ -6,7 +6,7 @@ in
   config = lib.mkIf desktop_environment.regreet.enable {
     programs.regreet = {
       enable = true;
-      settings = lib.mkForce (builtins.readFile ../../resources/regreet/settings.toml);
+      settings = lib.mkForce ../../resources/regreet/settings.toml;
     };
   };
 }
