@@ -4,7 +4,7 @@ let
 in
 {
   config = lib.mkIf desktop_environment.waybar.enable {
-    environment.systemPackages = with pkgs; [ line-awesome ];
+    environment.systemPackages = with pkgs; [ font-awesome ];
     home-manager.sharedModules = [
       {
         programs.waybar = {
