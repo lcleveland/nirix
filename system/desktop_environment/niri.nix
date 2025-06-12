@@ -14,7 +14,8 @@ in
           (plain "input" [
             (plain "keyboard" [
               (plain "xkb" [
-
+                (leaf "layout" niri.keyboard.layout)
+                (leaf "variant" niri.keyboard.variant)
               ])
             ])
           ])
