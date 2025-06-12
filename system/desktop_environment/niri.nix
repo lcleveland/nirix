@@ -24,6 +24,7 @@ in
               ])
             ])
             (plain "touchpad" [
+              (flag "dwt")
               (flag "natural-scroll")
               (flag "tap")
             ])
