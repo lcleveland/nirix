@@ -186,6 +186,13 @@
               The hostname to use.
             '';
           };
+          iwd.enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = ''
+              Whether to enable the iwd daemon.
+            '';
+          };
           network_manager.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
