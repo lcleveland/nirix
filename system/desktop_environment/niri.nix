@@ -13,6 +13,7 @@ in
       {
         programs.niri.config = [
           (flag "prefer-no-csd")
+          (leaf "spawn-at-startup" [ "hyprpanel" ])
           (plain "input" [
             (plain "keyboard" [
               (plain "xkb" [
