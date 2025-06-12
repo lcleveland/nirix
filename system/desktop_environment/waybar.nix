@@ -55,7 +55,7 @@ in
               };
             };
           };
-          style = builtins.readFile ./resources/waybar/style.css;
+          style = builtins.readFile ../../resources/waybar/style.css;
         };
       }
     ];
