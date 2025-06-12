@@ -102,7 +102,7 @@
             };
             prefer_no_csd = lib.mkOption {
               type = lib.types.bool;
-              default = false;
+              default = true;
               description = ''
         Whether to prefer no CSD.
       '';
