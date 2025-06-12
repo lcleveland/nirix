@@ -4,6 +4,10 @@ let
 in
 {
   config = lib.mkIf desktop_environment.hyprpanel.enable {
-    programs.hyprpanel.enable = true;
+    home-manager.sharedModules = [
+      {
+        programs.hyprpanel.enable = true;
+      }
+    ];
   };
 }
