@@ -106,15 +106,6 @@
               '';
             };
           };
-          ly = {
-            enable = lib.mkOption {
-              type = lib.types.bool;
-              default = true;
-              description = ''
-        Whether to enable Ly.
-        '';
-            };
-          };
           niri = {
             enable = lib.mkOption {
               type = lib.types.bool;
@@ -128,6 +119,15 @@
               default = true;
               description = ''
         Whether to prefer no CSD.
+      '';
+            };
+          };
+          regreet = {
+            enable = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
+        Whether to enable the Regreet desktop environment.
       '';
             };
           };
