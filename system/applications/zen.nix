@@ -5,7 +5,7 @@ in
 {
   config = lib.mkIf applications.zen.enable {
     environment.systemPackages = with pkgs; [
-      inputs.zen-browser.packages."${config.nirix.system.nix.host_platform}".default
+      inputs.zen_browser.packages."${config.nirix.system.nix.host_platform}".default
     ];
   };
 }

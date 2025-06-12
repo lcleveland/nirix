@@ -1,7 +1,7 @@
 {
   description = "Nirix: A minimal, keyboard-centric NixOS configuration using the Niri TWM";
 
-  outputs = { self, home_manager, iwmenu, niri, nirix_users, nixos_hardware, nixpkgs, walker, ... }@core_inputs:
+  outputs = { self, home_manager, iwmenu, niri, nirix_users, nixos_hardware, nixpkgs, walker, zen_browser, ... }@core_inputs:
     let
       inputs = core_inputs // nirix_users.inputs;
       import_modules = import ./resources/nix/import_modules.nix;
