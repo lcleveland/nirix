@@ -12,6 +12,7 @@ in
     home-manager.sharedModules = [
       {
         programs.niri.config = [
+          (flag "prefer-no-csd")
           (plain "input" [
             (plain "keyboard" [
               (plain "xkb" [
