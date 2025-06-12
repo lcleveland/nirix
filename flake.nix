@@ -1,7 +1,7 @@
 {
   description = "Nirix: A minimal, keyboard-centric NixOS configuration using the Niri TWM";
 
-  outputs = { self, home_manager, hyprpanel, niri, nirix_users, nixos_hardware, nixpkgs, walker, ... }@core_inputs:
+  outputs = { self, home_manager, niri, nirix_users, nixos_hardware, nixpkgs, walker, ... }@core_inputs:
     let
       inputs = core_inputs // nirix_users.inputs;
       import_modules = import ./resources/nix/import_modules.nix;
@@ -11,7 +11,6 @@
           home_manager.nixosModules.home-manager
           niri.nixosModules.niri
           walker.nixosModules.default
-          hyprpanel.homeManagerModules.hyprpanel
           ./options.nix
           /etc/nixos/hardware-configuration.nix
         ];
@@ -30,10 +29,6 @@
     home_manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager?ref=release-25.05";
-    };
-    hyprpanel = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:Jas-SinghFSU/HyprPanel";
     };
     niri = {
       inputs.nixpkgs.follows = "nixpkgs";
