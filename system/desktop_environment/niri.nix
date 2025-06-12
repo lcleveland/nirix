@@ -21,6 +21,9 @@ in
                 (leaf "variant" settings.keyboard.variant)
               ])
             ])
+            (plain "touchpad" [
+              (flag "natural-scroll")
+            ])
           ])
           (plain "hotkey-overlay" [
             (flag "skip-at-startup")
