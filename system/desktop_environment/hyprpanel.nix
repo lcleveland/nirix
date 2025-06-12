@@ -5,8 +5,7 @@ in
 {
   config = lib.mkIf desktop_environment.hyprpanel.enable {
     home-manager.sharedModules = [
-
-      hyprpanel.homeManagerModules.hyprpanel
+      ({ config, lib, pkgs, ... }: hyprpanel.homeManagerModules.hyprpanel)
       { }
     ];
   };
