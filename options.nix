@@ -108,22 +108,6 @@
       '';
             };
           };
-          sddm = {
-            enable = lib.mkOption {
-              type = lib.types.bool;
-              default = true;
-              description = ''
-          Whether to enable SDDM.
-        '';
-            };
-            wayland.enable = lib.mkOption {
-              type = lib.types.bool;
-              default = true;
-              description = ''
-          Whether to enable Wayland.
-        '';
-            };
-          };
           walker = {
             enable = lib.mkOption {
               type = lib.types.bool;

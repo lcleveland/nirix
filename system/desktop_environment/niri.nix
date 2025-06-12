@@ -33,7 +33,7 @@ in
           (plain "binds" [
             (plain "XF86AudioRaiseVolume" [ (leaf "spawn" [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ]) ])
             (plain "XF86AudioLowerVolume" [ (leaf "spawn" [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ]) ])
-            (plain "Mod+D" [ (leaf "spawn" [ "walker" ]) ])
+            (lib.mkIf settings.desktop_environment.walker.enable (plain "Mod+D" [ (leaf "spawn" [ "walker" ]) ]))
             (plain "Mod+T" [ (leaf "spawn" [ "ghostty" ]) ])
             (plain "Mod+Q" [ (flag "close-window") ])
             (plain "Mod+Left" [ (flag "focus-column-left") ])
