@@ -15,6 +15,7 @@ in
           (lib.mkIf
             settings.desktop_environment.niri.prefer_no_csd
             (flag "prefer-no-csd"))
+          (leaf "spawn-at-startup" [ "waybar" ])
           (plain "input" [
             (plain "keyboard" [
               (plain "xkb" [
