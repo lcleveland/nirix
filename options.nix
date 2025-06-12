@@ -40,6 +40,13 @@
               Whether to enable qemu.
             '';
           };
+          zen.enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = ''
+              Whether to enable Zen browser.
+            '';
+          };
         };
         bluetooth.enable = lib.mkOption {
           type = lib.types.bool;

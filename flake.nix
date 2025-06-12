@@ -49,5 +49,8 @@
     walker = {
       url = "github:abenz1267/walker";
     };
+    zen_browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+    };
   };
 }
