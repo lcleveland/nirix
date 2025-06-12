@@ -9,6 +9,14 @@ in
       {
         services.hypridle = {
           enable = true;
+          settings = {
+            listener = [
+              {
+                timeout = 900;
+                on-timeout = "hyprlock";
+              }
+            ];
+          };
         };
       }
     ];
