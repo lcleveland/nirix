@@ -97,6 +97,15 @@
           };
         };
         desktop_environment = {
+          hyprlock = {
+            enable = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
+        Whether to enable Hyprlock.
+      '';
+            };
+          };
           iwmenu = {
             enable = lib.mkOption {
               type = lib.types.bool;
@@ -127,7 +136,7 @@
               type = lib.types.bool;
               default = true;
               description = ''
-        Whether to enable the Regreet desktop environment.
+        Whether to enable the Regreet display manager.
       '';
             };
           };
