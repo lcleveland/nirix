@@ -83,15 +83,6 @@
           };
         };
         desktop_environment = {
-          hyprpanel = {
-            enable = lib.mkOption {
-              type = lib.types.bool;
-              default = true;
-              description = ''
-        Whether to enable HyprPanel.
-      '';
-            };
-          };
           ly = {
             enable = lib.mkOption {
               type = lib.types.bool;
