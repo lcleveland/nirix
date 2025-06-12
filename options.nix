@@ -19,6 +19,13 @@
               Whether to enable Ghostty.
             '';
           };
+          git.enable = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = ''
+              Whether to enable git.
+            '';
+          };
           libvirt.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
