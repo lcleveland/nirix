@@ -5,9 +5,9 @@ in
 {
   config = lib.mkIf desktop_environment.hyprpanel.enable {
     home-manager.sharedModules = [
-      {
-        configuration.programs.home-manager.enable = true;
-      }
+
+      hyprpanel.homeManagerModules.hyprpanel
+      { }
     ];
   };
 }
