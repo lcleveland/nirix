@@ -40,7 +40,7 @@ in
                 format-disconnected = "Disconnected ⚠";
               };
               "pulseaudio" = {
-                format = "{volume}% {icon}";
+                format = "{volume}%  {icon}";
                 format-bluetooth = "{volume}% {icon}";
                 format-muted = "";
                 format-icons = {
