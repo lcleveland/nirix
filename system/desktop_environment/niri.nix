@@ -33,7 +33,7 @@ in
             (flag "skip-at-startup")
           ])
           (node "output" "*" [
-            (leaf "background-color" [ config.nirix.system.colors.catppuccin.base ])
+            (leaf "background-color" [ config.nirix.system.colors.catppuccin.mocha.base ])
           ])
           (plain "binds" [
             (plain "XF86AudioRaiseVolume" [ (leaf "spawn" [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ]) ])
