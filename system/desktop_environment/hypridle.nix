@@ -17,7 +17,7 @@ in
               }
               {
                 timeout = 1800;
-                on-timeout = "brightnessctl -s set 10";
+                on-timeout = "brightnessctl -s set 1";
                 on-resume = "brightnessctl -r";
               }
             ];
