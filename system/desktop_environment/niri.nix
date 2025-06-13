@@ -32,7 +32,7 @@ in
           (plain "hotkey-overlay" [
             (flag "skip-at-startup")
           ])
-          (leaf "output" [ "*" ] [
+          (node "output" "*" [
             (leaf "background-color" [ config.nirix.system.colors.catppuccin.base ])
           ])
           (plain "binds" [
