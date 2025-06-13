@@ -32,6 +32,9 @@ in
           (plain "hotkey-overlay" [
             (flag "skip-at-startup")
           ])
+          (leaf "output" [ "*" ] [
+            (leaf "background-color" [ config.nirix.system.colors.catppuccin.base ])
+          ])
           (plain "binds" [
             (plain "XF86AudioRaiseVolume" [ (leaf "spawn" [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ]) ])
             (plain "XF86AudioLowerVolume" [ (leaf "spawn" [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ]) ])
