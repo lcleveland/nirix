@@ -255,12 +255,10 @@
           };
           vendor = lib.mkOption {
             type = lib.types.enum [
-              " amd "
-              "
-                intel "
+              "amd"
+              "intel"
             ];
-            default = "
-              amd ";
+            default = "amd";
             description = ''
                   The
                   CPU
