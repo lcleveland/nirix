@@ -478,11 +478,9 @@
           };
           host_platform = lib.mkOption {
             type = lib.types.enum [
-              "
-                x86_64-linux "
+              "x86_64-linux"
             ];
-            default = "
-              x86_64-linux ";
+            default = "x86_64-linux";
             description = ''
                   The
                   host
