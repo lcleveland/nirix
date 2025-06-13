@@ -384,8 +384,7 @@
         keyboard = {
           layout = lib.mkOption {
             type = lib.types.str;
-            default = "
-              us ";
+            default = "us";
             description = ''
                   The
                   keyboard
@@ -395,7 +394,7 @@
           };
           variant = lib.mkOption {
             type = lib.types.str;
-            default = " ";
+            default = "";
             description = ''
                   The
                   keyboard
@@ -406,8 +405,7 @@
         };
         language.locale = lib.mkOption {
           type = lib.types.str;
-          default = "
-            en_US.UTF-8 ";
+          default = "en_US.UTF-8";
           description = ''
                   The
                   locale
@@ -417,8 +415,7 @@
         network = {
           hostname = lib.mkOption {
             type = lib.types.str;
-            default = "
-              nirix ";
+            default = "nirix";
             description = ''
                   The
                   hostname
@@ -486,7 +483,7 @@
           };
           state_version = lib.mkOption {
             type = lib.types.str;
-            default = " 25.05 ";
+            default = "25.05";
             description = ''
                   The
                   state
@@ -526,8 +523,7 @@
             };
             dates = lib.mkOption {
               type = lib.types.str;
-              default = "
-                weekly ";
+              default = "weekly";
               description = ''
                   The
                   dates
@@ -537,7 +533,7 @@
             };
             options = lib.mkOption {
               type = lib.types.str;
-              default = " - -delete-older-than 7 d ";
+              default = "--delete-older-than 7d";
               description = ''
                   The
                   options
