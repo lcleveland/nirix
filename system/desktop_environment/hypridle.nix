@@ -15,6 +15,11 @@ in
                 timeout = 900;
                 on-timeout = "hyprlock";
               }
+              {
+                timeout = 1800;
+                on-timeout = "brightnessctl -s set 10";
+                on-remux = "brightnessctl -r";
+              }
             ];
           };
         };
