@@ -40,6 +40,7 @@ in
             (plain "XF86AudioLowerVolume" [ (leaf "spawn" [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ]) ])
             (lib.mkIf settings.desktop_environment.walker.enable (plain "Mod+D" [ (leaf "spawn" [ "walker" ]) ]))
             (plain "Mod+Escape" [ (leaf "spawn" [ "hyprlock" ]) ])
+            (plain "Mod+Shift+Escape" [ (leaf "spawn" [ "systemctl poweroff" ]) ])
             (plain "Mod+T" [ (leaf "spawn" [ "ghostty" ]) ])
             (plain "Mod+Q" [ (flag "close-window") ])
             (plain "Mod+Left" [ (flag "focus-column-left") ])
