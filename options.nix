@@ -40,6 +40,15 @@
               Whether to enable qemu.
             '';
           };
+          yazi = {
+            enable = lib.mkOption {
+              type = lib.types.bool;
+              default = true;
+              description = ''
+                                Whether to enable yazi.
+                	  '';
+            };
+          };
           zen.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
@@ -247,11 +256,11 @@
             type = lib.types.bool;
             default = true;
             description = ''
-                  Whether
-                  to
-                  enable
-                  microcode
-                  support.'';
+              Whether
+              to
+              enable
+              microcode
+              support.'';
           };
           vendor = lib.mkOption {
             type = lib.types.enum [
@@ -260,11 +269,11 @@
             ];
             default = "amd";
             description = ''
-                  The
-                  CPU
-                  vendor
-                  to
-                  use.'';
+              The
+              CPU
+              vendor
+              to
+              use.'';
           };
         };
         desktop_environment = {
@@ -273,10 +282,10 @@
               type = lib.types.bool;
               default = true;
               description = ''
-                  Whether
-                  to
-                  enable
-                  Hypridle.'';
+                Whether
+                to
+                enable
+                Hypridle.'';
             };
           };
           hyprlock = {
@@ -284,10 +293,10 @@
               type = lib.types.bool;
               default = true;
               description = ''
-                  Whether
-                  to
-                  enable
-                  Hyprlock.'';
+                Whether
+                to
+                enable
+                Hyprlock.'';
             };
           };
           iwmenu = {
@@ -295,10 +304,10 @@
               type = lib.types.bool;
               default = true;
               description = ''
-                  Whether
-                  to
-                  enable
-                  iwmenu.'';
+                Whether
+                to
+                enable
+                iwmenu.'';
             };
           };
           niri = {
@@ -306,20 +315,20 @@
               type = lib.types.bool;
               default = true;
               description = ''
-                  Whether
-                  to
-                  enable
-                  Niri.'';
+                Whether
+                to
+                enable
+                Niri.'';
             };
             prefer_no_csd = lib.mkOption {
               type = lib.types.bool;
               default = true;
               description = ''
-                  Whether
-                  to
-                  prefer
-                  no
-                  CSD.'';
+                Whether
+                to
+                prefer
+                no
+                CSD.'';
             };
           };
           regreet = {
@@ -327,13 +336,13 @@
               type = lib.types.bool;
               default = true;
               description = ''
-                  Whether
-                  to
-                  enable
-                  the
-                  Regreet
-                  display
-                  manager.'';
+                Whether
+                to
+                enable
+                the
+                Regreet
+                display
+                manager.'';
             };
           };
           walker = {
@@ -341,108 +350,108 @@
               type = lib.types.bool;
               default = true;
               description = ''
-                  Whether
-                  to
-                  enable
-                  the
-                  Walker
-                  desktop
-                  environment.'';
+                Whether
+                to
+                enable
+                the
+                Walker
+                desktop
+                environment.'';
             };
           };
           waybar.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             description = ''
-                  Whether
-                  to
-                  enable
-                  Waybar.'';
+              Whether
+              to
+              enable
+              Waybar.'';
           };
         };
         fingerprint.enable = lib.mkOption {
           type = lib.types.bool;
           default = true;
           description = ''
-                  Whether
-                  to
-                  enable
-                  fingerprint
-                  support.'';
+            Whether
+            to
+            enable
+            fingerprint
+            support.'';
         };
         framework.enable = lib.mkOption {
           type = lib.types.bool;
           default = false;
           description = ''
-                  Whether
-                  to
-                  enable
-                  Framework
-                  laptop
-                  support.'';
+            Whether
+            to
+            enable
+            Framework
+            laptop
+            support.'';
         };
         keyboard = {
           layout = lib.mkOption {
             type = lib.types.str;
             default = "us";
             description = ''
-                  The
-                  keyboard
-                  layout
-                  to
-                  use.'';
+              The
+              keyboard
+              layout
+              to
+              use.'';
           };
           variant = lib.mkOption {
             type = lib.types.str;
             default = "";
             description = ''
-                  The
-                  keyboard
-                  variant
-                  to
-                  use.'';
+              The
+              keyboard
+              variant
+              to
+              use.'';
           };
         };
         language.locale = lib.mkOption {
           type = lib.types.str;
           default = "en_US.UTF-8";
           description = ''
-                  The
-                  locale
-                  to
-                  use.'';
+            The
+            locale
+            to
+            use.'';
         };
         network = {
           hostname = lib.mkOption {
             type = lib.types.str;
             default = "nirix";
             description = ''
-                  The
-                  hostname
-                  to
-                  use.'';
+              The
+              hostname
+              to
+              use.'';
           };
           iwd.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             description = ''
-                  Whether
-                  to
-                  enable
-                  the
-                  iwd
-                  daemon.'';
+              Whether
+              to
+              enable
+              the
+              iwd
+              daemon.'';
           };
           network_manager.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             description = ''
-                  Whether
-                  to
-                  enable
-                  the
-                  network
-                  manager.'';
+              Whether
+              to
+              enable
+              the
+              network
+              manager.'';
           };
         };
         nix = {
@@ -450,26 +459,26 @@
             type = lib.types.bool;
             default = true;
             description = ''
-                  Whether
-                  to
-                  allow
-                  unfree
-                  software
-                  to
-                  be
-                  installed.'';
+              Whether
+              to
+              allow
+              unfree
+              software
+              to
+              be
+              installed.'';
           };
           flake.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             description = ''
-                  Whether
-                  to
-                  enable
-                  the
-                  Nix
-                  flake
-                  feature.'';
+              Whether
+              to
+              enable
+              the
+              Nix
+              flake
+              feature.'';
           };
           host_platform = lib.mkOption {
             type = lib.types.enum [
@@ -477,70 +486,70 @@
             ];
             default = "x86_64-linux";
             description = ''
-                  The
-                  host
-                  platform.'';
+              The
+              host
+              platform.'';
           };
           state_version = lib.mkOption {
             type = lib.types.str;
             default = "25.05";
             description = ''
-                  The
-                  state
-                  version.'';
+              The
+              state
+              version.'';
           };
           store_optimization.enable = lib.mkOption {
             type = lib.types.bool;
             default = true;
             description = ''
-                  Whether
-                  to
-                  enable
-                  store
-                  optimization.'';
+              Whether
+              to
+              enable
+              store
+              optimization.'';
           };
           garbage_collection = {
             enable = lib.mkOption {
               type = lib.types.bool;
               default = true;
               description = ''
-                  Whether
-                  to
-                  enable
-                  garbage
-                  collection.'';
+                Whether
+                to
+                enable
+                garbage
+                collection.'';
             };
             automatic = lib.mkOption {
               type = lib.types.bool;
               default = true;
               description = ''
-                  Whether
-                  to
-                  enable
-                  automatic
-                  garbage
-                  collection.'';
+                Whether
+                to
+                enable
+                automatic
+                garbage
+                collection.'';
             };
             dates = lib.mkOption {
               type = lib.types.str;
               default = "weekly";
               description = ''
-                  The
-                  dates
-                  to
-                  garbage
-                  collect.'';
+                The
+                dates
+                to
+                garbage
+                collect.'';
             };
             options = lib.mkOption {
               type = lib.types.str;
               default = "--delete-older-than 7d";
               description = ''
-                  The
-                  options
-                  to
-                  pass
-                  to
-                  nix-store - -optimize.'';
+                The
+                options
+                to
+                pass
+                to
+                nix-store - -optimize.'';
             };
           };
         };
@@ -548,15 +557,13 @@
           type = lib.types.str;
           default = "America/Chicago";
           description = ''
-                  The
-                  time
-                  zone
-                  to
-                  use.'';
+            The
+            time
+            zone
+            to
+            use.'';
         };
       };
     };
   };
 }
-
-

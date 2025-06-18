@@ -41,6 +41,7 @@ in
             (lib.mkIf settings.desktop_environment.walker.enable (plain "Mod+D" [ (leaf "spawn" [ "walker" ]) ]))
             (plain "Mod+Escape" [ (leaf "spawn" [ "hyprlock" ]) ])
             (plain "Mod+Shift+Escape" [ (leaf "spawn" [ "systemctl" "poweroff" ]) ])
+            (lib.mkIf settings.desktop_environment.yazi.enable (plain "Mod+T" [ (leaf "spawn" [ "ghostty" "-e yazi" ]) ]))
             (plain "Mod+T" [ (leaf "spawn" [ "ghostty" ]) ])
             (plain "Mod+Q" [ (flag "close-window") ])
             (plain "Mod+Left" [ (flag "focus-column-left") ])
