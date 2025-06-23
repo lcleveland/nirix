@@ -19,8 +19,8 @@ in
           (plain "input" [
             (plain "keyboard" [
               (plain "xkb" [
-                (leaf "layout" settings.keyboard.layout)
-                (leaf "variant" settings.keyboard.variant)
+                (leaf "layout" [ settings.keyboard.layout ])
+                (leaf "variant" [ settings.keyboard.variant ])
               ])
             ])
             (plain "touchpad" [
@@ -41,7 +41,7 @@ in
             (lib.mkIf settings.desktop_environment.walker.enable (plain "Mod+D" [ (leaf "spawn" [ "walker" ]) ]))
             (plain "Mod+Escape" [ (leaf "spawn" [ "hyprlock" ]) ])
             (plain "Mod+Shift+Escape" [ (leaf "spawn" [ "systemctl" "poweroff" ]) ])
-            (lib.mkIf settings.applications.yazi.enable (plain "Mod+E" [ (leaf "spawn" [ "ghostty" "-e" "yazi"]) ]))
+            (lib.mkIf settings.applications.yazi.enable (plain "Mod+E" [ (leaf "spawn" [ "ghostty" "-e" "yazi" ]) ]))
             (plain "Mod+T" [ (leaf "spawn" [ "ghostty" ]) ])
             (plain "Mod+Q" [ (flag "close-window") ])
             (plain "Mod+Left" [ (flag "focus-column-left") ])
