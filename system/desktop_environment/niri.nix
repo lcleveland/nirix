@@ -32,7 +32,7 @@ in
           (plain "hotkey-overlay" [
             (flag "skip-at-startup")
           ])
-          (node "output" "edp-1" [
+          (node "output" [ "edp-1" ] [
             (leaf "background-color" [ config.nirix.system.colors.catppuccin.mocha.base ])
           ])
           (plain "binds" [
