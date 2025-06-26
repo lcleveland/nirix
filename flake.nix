@@ -8,9 +8,9 @@
       core_modules = (import_modules ./options) ++
         (import_modules ./system) ++
         nirix_users.nixosModules.default ++
+        niri.nixosModules.niri ++
         [
           home_manager.nixosModules.home-manager
-          niri.nixosModules.niri
           walker.nixosModules.default
           /etc/nixos/hardware-configuration.nix
         ];
