@@ -7,8 +7,10 @@ in
 {
   config = lib.mkIf niri.enable {
     programs = {
-      niri.enable = true;
-      package = pkgs.niri-stable;
+      niri = {
+        enable = true;
+        package = pkgs.niri-stable;
+      };
     };
     nixpkgs.overlays = [ inputs.niri.overlays.niri ];
     home-manager.sharedModules = [
