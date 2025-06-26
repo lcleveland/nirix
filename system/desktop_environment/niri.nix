@@ -16,7 +16,7 @@ in
     home-manager.sharedModules = [
       {
         programs.niri.settings = {
-          binds = with inputs.niri.homeModules.config.lib.niri.actions; {
+          binds = with config.lib.niri.actions; {
             "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
             "XF86AudioLowerVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
             "Mod+D".action = lib.mkIf settings.desktop_environment.walker.enable spawn [ "walker" ];
@@ -101,8 +101,9 @@ in
             "Mod+Equal".action = set-column-width "+10%";
             "Mod+Shift+Minus".action = set-window-height "-10%";
             "Mod+Shift+Equal".action = set-window-height "+10%";
-            "Print".action.screenshot = false;
-            "Alt+Print".action.screenshot-window = false;
+            "Print".action = screenshot;
+            "Ctrl+Print".action = screenshot-screen;
+            "Alt+Print".action = screenshot-window;
             "Mod+Shift+E".action = quit;
             "Mod+Shift+P".action = power-off-monitors;
           };
