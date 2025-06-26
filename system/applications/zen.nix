@@ -1,6 +1,6 @@
 { config, inputs, lib, pkgs, ... }:
 let
-  zen = config.nirix.config_root.applications.zen;
+  zen = config.nirix.system.applications.zen;
 in
 {
   config = lib.mkIf zen.enable {
