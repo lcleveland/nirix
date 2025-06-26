@@ -8,12 +8,13 @@ in
   config = lib.mkIf niri.enable {
     programs = {
       niri.enable = true;
+      package = pkgs.niri-stable;
     };
     nixpkgs.overlays = [ inputs.niri.overlays.niri ];
     home-manager.sharedModules = [
       {
         programs.niri.settings = {
-          binds = with inputs.niri.actions; {
+          binds = with config.lib.niri.actions; {
             "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
             "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
             "Mod+D".action.spawn = lib.mkIf settings.desktop_environment.walker.enable [ "walker" ];
