@@ -9,7 +9,7 @@ in
     programs = {
       niri.enable = true;
     };
-    nixpkgs.overlays = [ niri.overlays.niri ];
+    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
     home-manager.sharedModules = [
       {
         programs.niri.settings = {
