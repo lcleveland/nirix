@@ -10,11 +10,12 @@
         nirix_users.nixosModules.default ++
         [
           home_manager.nixosModules.home-manager
+          niri.nixosModules.niri
           walker.nixosModules.default
           /etc/nixos/hardware-configuration.nix
         ];
       make_framework_16 = nixpkgs.lib.nixosSystem {
-        modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd niri.nixosModules.niri ];
+        modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
         specialArgs = { inherit inputs; };
       };
     in
