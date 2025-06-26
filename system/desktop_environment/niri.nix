@@ -1,7 +1,7 @@
 { config, inputs, lib, pkgs, ... }:
 let
-  niri = ${config.nirix.config_root}.desktop_environment.niri;
-  settings = ${config.nirix.config_root};
+  niri = config.nirix.config_root.desktop_environment.niri;
+  settings = config.nirix.config_root;
   inherit (inputs.niri.lib.kdl) node plain leaf flag;
 in
 {

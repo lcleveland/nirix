@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 let
-  keyboard = ${config.nirix.config_root}.keyboard;
-  regreet = ${config.nirix.config_root}.desktop_environment.regreet;
+  keyboard = config.nirix.config_root.keyboard;
+  regreet = config.nirix.config_root.desktop_environment.regreet;
 in
 {
   config = lib.mkIf regreet.enable {

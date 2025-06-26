@@ -1,6 +1,6 @@
 { config, home-manager, lib, pkgs, ... }:
 let
-  waybar = ${config.nirix.config_root}.desktop_environment.waybar;
+  waybar = config.nirix.config_root.desktop_environment.waybar;
 in
 {
   config = lib.mkIf waybar.enable {

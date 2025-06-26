@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  boot = ${config.nirix.config_root}.boot;
+  boot = config.nirix.config_root.boot;
 in
 {
   config = {

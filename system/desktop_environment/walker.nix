@@ -1,7 +1,7 @@
 { config, inputs, lib, pkgs, ... }:
 let
   walker = config.nirix.system.desktop_environment.walker;
-  nix = ${config.nirix.config_root}.nix;
+  nix = config.nirix.config_root.nix;
 in
 {
   config = lib.mkIf walker.enable {

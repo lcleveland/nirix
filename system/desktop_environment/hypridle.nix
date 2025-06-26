@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  hypridle = ${config.nirix.config_root}.desktop_environment.hypridle;
+  hypridle = config.nirix.config_root.desktop_environment.hypridle;
 in
 {
   config = lib.mkIf hypridle.enable {
