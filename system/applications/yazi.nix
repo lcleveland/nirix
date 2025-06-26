@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
+let
+  yazi = ${config.nirix.config_root}.applications.yazi;
+in
 {
-  config = lib.mkIf (config.nirix.system.applications.yazi.enable) {
+  config = lib.mkIf yazi.enable {
     environment.systemPackages = [
       pkgs.yazi
     ];

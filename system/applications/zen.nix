@@ -1,9 +1,9 @@
 { config, inputs, lib, pkgs, ... }:
 let
-  applications = config.nirix.system.applications;
+  zen = ${config.nirix.config_root}.applications.zen;
 in
 {
-  config = lib.mkIf applications.zen.enable {
+  config = lib.mkIf zen.enable {
     environment.systemPackages = with pkgs; [
       inputs.zen_browser.packages."${config.nirix.system.nix.host_platform}".default
     ];

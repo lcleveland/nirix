@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  ghostty = config.nirix.system.applications.ghostty;
+  ghostty = ${config.nirix.config_root}.applications.ghostty;
 in
 {
   config = lib.mkIf ghostty.enable {

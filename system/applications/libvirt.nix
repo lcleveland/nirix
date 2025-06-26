@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  libvirt = config.nirix.system.applications.libvirt;
+  libvirt = ${config.nirix.config_root}.applications.libvirt;
 in
 {
   config = lib.mkIf libvirt.enable {

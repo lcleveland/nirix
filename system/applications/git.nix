@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 let
-  applications = config.nirix.system.applications;
+  git = ${config.nirix.config_root}.applications.git;
 in
 {
-  config = lib.mkIf applications.git.enable {
+  config = lib.mkIf git.enable {
     environment.systemPackages = with pkgs; [
       git
     ];
