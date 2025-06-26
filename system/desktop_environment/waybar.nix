@@ -1,13 +1,13 @@
 { config, home-manager, lib, pkgs, ... }:
 let
-  desktop_environment = config.nirix.system.desktop_environment;
+  waybar = ${config.nirix.config_root}.desktop_environment.waybar;
 in
 {
-  config = lib.mkIf desktop_environment.waybar.enable {
+  config = lib.mkIf waybar.enable {
     home-manager.sharedModules = [
       {
         programs.waybar = {
-          enable = desktop_environment.waybar.enable;
+          enable = waybar.enable;
           settings = {
             mainBar = {
               layer = "top";

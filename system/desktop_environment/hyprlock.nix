@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 let
-  desktop_environment = config.nirix.system.desktop_environment;
+  hyprlock = ${config.nirix.config_root}.desktop_environment.hyprlock;
 in
 {
-  config = lib.mkIf desktop_environment.hyprlock.enable {
+  config = lib.mkIf hyprlock.enable {
     security.pam.services.hyprlock = { };
     home-manager.sharedModules = [
       {

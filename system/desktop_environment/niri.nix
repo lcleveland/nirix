@@ -1,7 +1,7 @@
 { config, inputs, lib, pkgs, ... }:
 let
-  niri = config.nirix.system.desktop_environment.niri;
-  settings = config.nirix.system;
+  niri = ${config.nirix.config_root}.desktop_environment.niri;
+  settings = ${config.nirix.config_root};
   inherit (inputs.niri.lib.kdl) node plain leaf flag;
 in
 {
@@ -13,7 +13,7 @@ in
       {
         programs.niri.config = [
           (lib.mkIf
-            settings.desktop_environment.niri.prefer_no_csd
+            niri.prefer_no_csd
             (flag "prefer-no-csd"))
           (leaf "spawn-at-startup" [ "waybar" ])
           (plain "input" [

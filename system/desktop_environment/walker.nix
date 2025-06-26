@@ -1,13 +1,13 @@
 { config, inputs, lib, pkgs, ... }:
 let
-  desktop_environment = config.nirix.system.desktop_environment;
-  nix = config.nirix.system.nix;
+  walker = config.nirix.system.desktop_environment.walker;
+  nix = ${config.nirix.config_root}.nix;
 in
 {
-  config = lib.mkIf desktop_environment.walker.enable {
+  config = lib.mkIf walker.enable {
     environment.systemPackages = [ inputs.walker.packages.${nix.host_platform}.default ];
     programs.walker = {
-      enable = desktop_environment.walker.enable;
+      enable = walker.enable;
     };
   };
 }

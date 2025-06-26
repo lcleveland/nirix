@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 let
-  desktop_environment = config.nirix.system.desktop_environment;
+  hypridle = ${config.nirix.config_root}.desktop_environment.hypridle;
 in
 {
-  config = lib.mkIf desktop_environment.hypridle.enable {
+  config = lib.mkIf hypridle.enable {
     security.pam.services.hypridle = { };
     home-manager.sharedModules = [
       {
