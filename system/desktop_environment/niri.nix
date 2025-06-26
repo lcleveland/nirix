@@ -1,10 +1,11 @@
-{ config, inputs, lib, nixpkgs, pkgs, ... }:
+{ config, inputs, lib, niri, nixpkgs, pkgs, ... }:
 let
   niri = config.nirix.system.desktop_environment.niri;
   settings = config.nirix.system;
   inherit (inputs.niri.lib.kdl) node plain leaf flag;
 in
 {
+  imports = [ inpets.niri.nixosModules.niri ];
   config = lib.mkIf niri.enable {
     programs = {
       niri = {
