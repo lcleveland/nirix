@@ -106,7 +106,7 @@ in
           hotkey-overlay = {
             skip-at-startup = true;
           };
-          inputs = {
+          input = {
             keyboard = {
               xbk = {
                 layout = settings.keyboard.layout;
