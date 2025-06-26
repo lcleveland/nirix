@@ -1,4 +1,4 @@
-{ config, inputs, lib, home_manager, ... }:
+{ config, inputs, lib, ... }:
 let
   settings = config.nirix.system;
 in
