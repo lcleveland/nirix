@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, nixpkgs, pkgs, ... }:
 let
   niri = config.nirix.system.desktop_environment.niri;
   settings = config.nirix.system;
@@ -9,6 +9,7 @@ in
     programs = {
       niri.enable = true;
     };
+    nixpkgs.overlays = [ niri.overlays.niri ];
     home-manager.sharedModules = [
       {
         programs.niri.settings = {
