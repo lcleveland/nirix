@@ -8,14 +8,13 @@
       core_modules = (import_modules ./options) ++
         (import_modules ./system) ++
         nirix_users.nixosModules.default ++
-        niri.nixosModules.niri ++
         [
           home_manager.nixosModules.home-manager
           walker.nixosModules.default
           /etc/nixos/hardware-configuration.nix
         ];
       make_framework_16 = nixpkgs.lib.nixosSystem {
-        modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
+        modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd niri.nixosModules.niri ];
         specialArgs = { inherit inputs; };
       };
     in
