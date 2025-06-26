@@ -11,122 +11,124 @@ in
     };
     home-manager.sharedModules = [
       {
-        programs.niri.config = [
-          (lib.mkIf
-            niri.prefer_no_csd
-            (flag "prefer-no-csd"))
-          (leaf "spawn-at-startup" [ "waybar" ])
-          (plain "input" [
-            (plain "keyboard" [
-              (plain "xkb" [
-                (leaf "layout" [ settings.keyboard.layout ])
-                (leaf "variant" [ settings.keyboard.variant ])
-              ])
-            ])
-            (plain "touchpad" [
-              (flag "dwt")
-              (flag "natural-scroll")
-              (flag "tap")
-            ])
-          ])
-          (plain "hotkey-overlay" [
-            (flag "skip-at-startup")
-          ])
-          (node "output" [ "edp-1" ] [
-            (leaf "background-color" [ config.nirix.system.desktop_environment.theme.colors.compositor_background ])
-          ])
-          (plain "binds" [
-            (plain "XF86AudioRaiseVolume" [ (leaf "spawn" [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ]) ])
-            (plain "XF86AudioLowerVolume" [ (leaf "spawn" [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ]) ])
-            (lib.mkIf settings.desktop_environment.walker.enable (plain "Mod+D" [ (leaf "spawn" [ "walker" ]) ]))
-            (plain "Mod+Escape" [ (leaf "spawn" [ "hyprlock" ]) ])
-            (plain "Mod+Shift+Escape" [ (leaf "spawn" [ "systemctl" "poweroff" ]) ])
-            (lib.mkIf settings.applications.yazi.enable (plain "Mod+E" [ (leaf "spawn" [ "ghostty" "-e" "yazi" ]) ]))
-            (plain "Mod+T" [ (leaf "spawn" [ "ghostty" ]) ])
-            (plain "Mod+Q" [ (flag "close-window") ])
-            (plain "Mod+Left" [ (flag "focus-column-left") ])
-            (plain "Mod+Down" [ (flag "focus-window-down") ])
-            (plain "Mod+Up" [ (flag "focus-window-up") ])
-            (plain "Mod+Right" [ (flag "focus-column-right") ])
-            (plain "Mod+H" [ (flag "focus-column-left") ])
-            (plain "Mod+J" [ (flag "focus-window-down") ])
-            (plain "Mod+K" [ (flag "focus-window-up") ])
-            (plain "Mod+L" [ (flag "focus-column-right") ])
-            (plain "Mod+Ctrl+Left" [ (flag "move-column-left") ])
-            (plain "Mod+Ctrl+Down" [ (flag "move-window-down") ])
-            (plain "Mod+Ctrl+Up" [ (flag "move-window-up") ])
-            (plain "Mod+Ctrl+Right" [ (flag "move-column-right") ])
-            (plain "Mod+Ctrl+H" [ (flag "move-column-left") ])
-            (plain "Mod+Ctrl+J" [ (flag "move-window-down") ])
-            (plain "Mod+Ctrl+K" [ (flag "move-window-up") ])
-            (plain "Mod+Ctrl+L" [ (flag "move-column-right") ])
-            (plain "Mod+Home" [ (flag "focus-column-first") ])
-            (plain "Mod+End" [ (flag "focus-column-last") ])
-            (plain "Mod+Ctrl+Home" [ (flag "move-column-to-first") ])
-            (plain "Mod+Ctrl+End" [ (flag "move-column-to-last") ])
-            (plain "Mod+Shift+Left" [ (flag "focus-monitor-left") ])
-            (plain "Mod+Shift+Down" [ (flag "focus-monitor-down") ])
-            (plain "Mod+Shift+Up" [ (flag "focus-monitor-up") ])
-            (plain "Mod+Shift+Right" [ (flag "focus-monitor-right") ])
-            (plain "Mod+Shift+H" [ (flag "focus-monitor-left") ])
-            (plain "Mod+Shift+J" [ (flag "focus-monitor-down") ])
-            (plain "Mod+Shift+K" [ (flag "focus-monitor-up") ])
-            (plain "Mod+Shift+L" [ (flag "focus-monitor-right") ])
-            (plain "Mod+Shift+Ctrl+Left" [ (flag "move-column-to-monitor-left") ])
-            (plain "Mod+Shift+Ctrl+Down" [ (flag "move-column-to-monitor-down") ])
-            (plain "Mod+Shift+Ctrl+Up" [ (flag "move-column-to-monitor-up") ])
-            (plain "Mod+Shift+Ctrl+Right" [ (flag "move-column-to-monitor-right") ])
-            (plain "Mod+Shift+Ctrl+H" [ (flag "move-column-to-monitor-left") ])
-            (plain "Mod+Shift+Ctrl+J" [ (flag "move-column-to-monitor-down") ])
-            (plain "Mod+Shift+Ctrl+K" [ (flag "move-column-to-monitor-up") ])
-            (plain "Mod+Shift+Ctrl+L" [ (flag "move-column-to-monitor-right") ])
-            (plain "Mod+Page_Down" [ (flag "focus-workspace-down") ])
-            (plain "Mod+Page_Up" [ (flag "focus-workspace-up") ])
-            (plain "Mod+U" [ (flag "focus-workspace-down") ])
-            (plain "Mod+I" [ (flag "focus-workspace-up") ])
-            (plain "Mod+Ctrl+Page_Down" [ (flag "move-column-to-workspace-down") ])
-            (plain "Mod+Ctrl+Page_Up" [ (flag "move-column-to-workspace-up") ])
-            (plain "Mod+Ctrl+U" [ (flag "move-column-to-workspace-down") ])
-            (plain "Mod+Ctrl+I" [ (flag "move-column-to-workspace-up") ])
-            (plain "Mod+Shift+Page_Down" [ (flag "move-workspace-down") ])
-            (plain "Mod+Shift+Page_Up" [ (flag "move-workspace-up") ])
-            (plain "Mod+Shift+U" [ (flag "move-workspace-down") ])
-            (plain "Mod+Shift+I" [ (flag "move-workspace-up") ])
-            (plain "Mod+1" [ (leaf "focus-workspace" [ 1 ]) ])
-            (plain "Mod+2" [ (leaf "focus-workspace" [ 2 ]) ])
-            (plain "Mod+3" [ (leaf "focus-workspace" [ 3 ]) ])
-            (plain "Mod+4" [ (leaf "focus-workspace" [ 4 ]) ])
-            (plain "Mod+5" [ (leaf "focus-workspace" [ 5 ]) ])
-            (plain "Mod+6" [ (leaf "focus-workspace" [ 6 ]) ])
-            (plain "Mod+7" [ (leaf "focus-workspace" [ 7 ]) ])
-            (plain "Mod+8" [ (leaf "focus-workspace" [ 8 ]) ])
-            (plain "Mod+9" [ (leaf "focus-workspace" [ 9 ]) ])
-            (plain "Mod+Ctrl+1" [ (leaf "move-column-to-workspace" [ 1 ]) ])
-            (plain "Mod+Ctrl+2" [ (leaf "move-column-to-workspace" [ 2 ]) ])
-            (plain "Mod+Ctrl+3" [ (leaf "move-column-to-workspace" [ 3 ]) ])
-            (plain "Mod+Ctrl+4" [ (leaf "move-column-to-workspace" [ 4 ]) ])
-            (plain "Mod+Ctrl+5" [ (leaf "move-column-to-workspace" [ 5 ]) ])
-            (plain "Mod+Ctrl+6" [ (leaf "move-column-to-workspace" [ 6 ]) ])
-            (plain "Mod+Ctrl+7" [ (leaf "move-column-to-workspace" [ 7 ]) ])
-            (plain "Mod+Ctrl+8" [ (leaf "move-column-to-workspace" [ 8 ]) ])
-            (plain "Mod+Ctrl+9" [ (leaf "move-column-to-workspace" [ 9 ]) ])
-            (plain "Mod+Comma" [ (flag "consume-window-into-column") ])
-            (plain "Mod+Period" [ (flag "expel-window-from-column") ])
-            (plain "Mod+R" [ (flag "switch-preset-column-width") ])
-            (plain "Mod+F" [ (flag "maximize-column") ])
-            (plain "Mod+Shift+F" [ (flag "fullscreen-window") ])
-            (plain "Mod+C" [ (flag "center-column") ])
-            (plain "Mod+Minus" [ (leaf "set-column-width" [ "-10%" ]) ])
-            (plain "Mod+Equal" [ (leaf "set-column-width" [ "+10%" ]) ])
-            (plain "Mod+Shift+Minus" [ (leaf "set-window-height" [ "-10%" ]) ])
-            (plain "Mod+Shift+Equal" [ (leaf "set-window-height" [ "+10%" ]) ])
-            (plain "Print" [ (flag "screenshot") ])
-            (plain "Ctrl+Print" [ (flag "screenshot-screen") ])
-            (plain "Alt+Print" [ (flag "screenshot-window") ])
-            (plain "Mod+Shift+E" [ (flag "quit") ])
-            (plain "Mod+Shift+P" [ (flag "power-off-monitors") ])
-          ])
-        ];
+        programs.niri.settings = {
+          binds = with config.lib.niri.actions; {
+            "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
+            "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
+            "Mod+D".action.spawn = lib.mkIf settings.desktop_environment.walker.enable [ "walker" ];
+            "Mod+Escape".action.spawn = lib.mkIf settings.applications.hyprlock.enable [ "hyprlock" ];
+            "Mod+Shift+Escape".action.spawn = [ "systemctl" "poweroff" ];
+            "Mod+E".action.spawn = lib.mkIf (settings.applications.yazi.enable && settings.applications.ghostty.enable) [ "ghostty" "-e" "yazi" ];
+            "Mod+T".action.spawn = lib.mkIf settings.applications.ghostty.enable [ "ghostty" ];
+            "Mod+Q".action = close-window;
+            "Mod+Left".action = focus-column-left;
+            "Mod+Down".action = focus-window-down;
+            "Mod+Up".action = focus-window-up;
+            "Mod+Right".action = focus-column-right;
+            "Mod+H".action = focus-column-left;
+            "Mod+J".action = focus-window-down;
+            "Mod+K".action = focus-window-up;
+            "Mod+L".action = focus-column-right;
+            "Mod+Ctrl+Left".action = move-column-left;
+            "Mod+Ctrl+Down".action = move-window-down;
+            "Mod+Ctrl+Up".action = move-window-up;
+            "Mod+Ctrl+Right".action = move-column-right;
+            "Mod+Ctrl+H".action = move-column-left;
+            "Mod+Ctrl+J".action = move-window-down;
+            "Mod+Ctrl+K".action = move-window-up;
+            "Mod+Ctrl+L".action = move-column-right;
+            "Mod+Home".action = focus-column-first;
+            "Mod+End".action = focus-column-last;
+            "Mod+Ctrl+Home".action = move-column-to-first;
+            "Mod+Ctrl+End".action = move-column-to-last;
+            "Mod+Shift+Left".action = focus-monitor-left;
+            "Mod+Shift+Down".action = focus-monitor-down;
+            "Mod+Shift+Up".action = focus-monitor-up;
+            "Mod+Shift+Right".action = focus-monitor-right;
+            "Mod+Shift+H".action = focus-monitor-left;
+            "Mod+Shift+J".action = focus-monitor-down;
+            "Mod+Shift+K".action = focus-monitor-up;
+            "Mod+Shift+L".action = focus-monitor-right;
+            "Mod+Shift+Ctrl+Left".action = move-column-to-monitor-left;
+            "Mod+Shift+Ctrl+Down".action = move-column-to-monitor-down;
+            "Mod+Shift+Ctrl+Up".action = move-column-to-monitor-up;
+            "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
+            "Mod+Shift+Ctrl+H".action = move-column-to-monitor-left;
+            "Mod+Shift+Ctrl+J".action = move-column-to-monitor-down;
+            "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
+            "Mod+Shift+Ctrl+L".action = move-column-to-monitor-right;
+            "Mod+Page_Down".action = focus-workspace-down;
+            "Mod+Page_Up".action = focus-workspace-up;
+            "Mod+U".action = focus-workspace-down;
+            "Mod+I".action = focus-workspace-up;
+            "Mod+Ctrl+Page_Down".action = move-column-to-workspace-down;
+            "Mod+Ctrl+Page_Up".action = move-column-to-workspace-up;
+            "Mod+Ctrl+U".action = move-column-to-workspace-down;
+            "Mod+Ctrl+I".action = move-column-to-workspace-up;
+            "Mod+Shift+Page_Down".action = move-workspace-down;
+            "Mod+Shift+Page_Up".action = move-workspace-up;
+            "Mod+Shift+U".action = move-workspace-down;
+            "Mod+Shift+I".action = move-workspace-up;
+            "Mod+1".action.focus-workspace = 1;
+            "Mod+2".action.focus-workspace = 2;
+            "Mod+3".action.focus-workspace = 3;
+            "Mod+4".action.focus-workspace = 4;
+            "Mod+5".action.focus-workspace = 5;
+            "Mod+6".action.focus-workspace = 6;
+            "Mod+7".action.focus-workspace = 7;
+            "Mod+8".action.focus-workspace = 8;
+            "Mod+9".action.focus-workspace = 9;
+            "Mod+Ctrl+1".action.move-column-to-workspace = 1;
+            "Mod+Ctrl+2".action.move-column-to-workspace = 2;
+            "Mod+Ctrl+3".action.move-column-to-workspace = 3;
+            "Mod+Ctrl+4".action.move-column-to-workspace = 4;
+            "Mod+Ctrl+5".action.move-column-to-workspace = 5;
+            "Mod+Ctrl+6".action.move-column-to-workspace = 6;
+            "Mod+Ctrl+7".action.move-column-to-workspace = 7;
+            "Mod+Ctrl+8".action.move-column-to-workspace = 8;
+            "Mod+Ctrl+9".action.move-column-to-workspace = 9;
+            "Mod+Comma".action = consume-window-into-column;
+            "Mod+Period".action = expel-window-from-column;
+            "Mod+R".action = switch-preset-column-width;
+            "Mod+F".action = maximize-column;
+            "Mod+Shift+F".action = fullscreen-window;
+            "Mod+C".action = center-column;
+            "Mod+Minus".action.set-column-width = "-10%";
+            "Mod+Equal".action.set-column-width = "+10%";
+            "Mod+Shift+Minus".action.set-window-height = "-10%";
+            "Mod+Shift+Equal".action.set-window-height = "+10%";
+            "Print".action = screenshot;
+            "Ctrl+Print".action = screenshot-screen;
+            "Alt+Print".action = screenshot-window;
+            "Mod+Shift+E".action = quit;
+            "Mod+Shift+P".action = power-off-monitors;
+          };
+          hotkey-overlay = {
+            skip-at-startup = true;
+          };
+          inputs = {
+            keyboard = {
+              xbk = {
+                layout = settings.keyboard.layout;
+                variant = settings.keyboard.variant;
+              };
+            };
+            touchpad = {
+              dwt = true;
+              natural-scroll = true;
+              tap = true;
+            };
+          };
+          outputs = {
+            "edp-1" = {
+              background-color = settings.desktop_environment.theme.colors.compositor_background;
+            };
+          };
+          prefer-no-csd = niri.prefer_no_csd;
+          spawn-at-startup = [
+            (lib.mkIf settings.desktop_environment.waybar.enable { command = [ "waybar" ]; })
+          ];
+        };
       }
     ];
   };
