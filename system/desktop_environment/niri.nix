@@ -108,7 +108,7 @@ in
           };
           input = {
             keyboard = {
-              xbk = {
+              xkb = {
                 layout = settings.keyboard.layout;
                 variant = settings.keyboard.variant;
               };
