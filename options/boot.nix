@@ -1,9 +1,6 @@
 { config, lib, pkgs, ... }:
-let
-  options_root = config.nirix.options_root;
-in
 {
-  ${options_root}.boot = {
+  options.nirix.system.boot = {
     loader = {
       efi.can_touch_efi_vars = lib.mkOption {
         type = lib.types.bool;

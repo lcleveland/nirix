@@ -1,9 +1,6 @@
 { config, lib, ... }:
-let
-  options_root = config.nirix.options_root;
-in
 {
-  ${options_root}.applications.qemu = {
+  options.nirix.system.applications.qemu = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = true;

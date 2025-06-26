@@ -1,9 +1,6 @@
 { config, lib, ... }:
-let
-  options_root = config.nirix.options_root;
-in
 {
-  ${options_root}.bluetooth = {
+  options.nirix.system.bluetooth = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = true;

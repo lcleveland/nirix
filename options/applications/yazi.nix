@@ -1,9 +1,6 @@
 { config, lib, ... }:
-let
-  options_root = config.nirix.options_root;
-in
 {
-  ${options_root}.applications.yazi = {
+  options.nirix.system.applications.yazi = {
     enable = lib.mkOption {
       type = lib.types.bool;
       default = true;

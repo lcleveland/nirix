@@ -1,9 +1,6 @@
 { config, lib, ... }:
-let
-  options_root = config.nirix.options_root;
-in
 {
-  ${options_root}.keyboard = {
+  options.nirix.system.keyboard = {
     layout = lib.mkOption {
       type = lib.types.str;
       default = "us";

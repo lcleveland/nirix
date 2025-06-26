@@ -1,9 +1,6 @@
 { config, lib, ... }:
-let
-  options_root = config.nirix.options_root;
-in
 {
-  ${options_root}.nix = {
+  options.nirix.system.nix = {
     allow_unfree_software = lib.mkOption {
       type = lib.types.bool;
       default = true;

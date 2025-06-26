@@ -1,9 +1,6 @@
 { config, lib, ... }:
-let
-  options_root = config.nirix.options_root;
-in
 {
-  ${options_root}.time = {
+  options.nirix.system.time = {
     time_zone = lib.mkOption {
       type = lib.types.str;
       default = "America/Chicago";

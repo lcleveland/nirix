@@ -1,6 +1,6 @@
 { config, lib, ... }:
 {
-  ${config.nirix.options_root}.colors.catppuccin.mocha = {
+  options.nirix.system.colors.catppuccin.mocha = {
     name = lib.mkOption {
       type = lib.types.str;
       default = "catppuccin_mocha";

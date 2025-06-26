@@ -1,9 +1,6 @@
 { config, lib, ... }:
-let
-  options_root = config.nirix.options_root;
-in
 {
-  ${options_root}.network = {
+  options.nirix.system.network = {
     hostname = lib.mkOption {
       type = lib.types.str;
       default = "nirix";
