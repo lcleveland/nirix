@@ -1,4 +1,4 @@
-{ config, inputs, lib, niri, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 let
   niri = config.nirix.system.desktop_environment.niri;
   settings = config.nirix.system;
