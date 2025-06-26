@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  bluetooth = config.nirix.system.bluetooth;
+  bluetooth = ${config.nirix.config_root}.bluetooth;
 in
 {
   config = {

@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  time = config.nirix.system.time;
+  time = ${config.nirix.config_root}.time;
 in
 {
   config = {

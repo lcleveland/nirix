@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  language = config.nirix.system.language;
+  language = ${config.nirix.config_root}.language;
 in
 {
   config = {

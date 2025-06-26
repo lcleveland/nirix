@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  keyboard = config.nirix.system.keyboard;
+  keyboard = ${config.nirix.config_root}.keyboard;
 in
 {
   config = {

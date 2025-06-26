@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  fingerprint = config.nirix.system.fingerprint;
+  fingerprint = ${config.nirix.config_root}.fingerprint;
 in
 {
   config = {

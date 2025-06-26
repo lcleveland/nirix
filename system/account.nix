@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  account = config.nirix.system.account;
+  account = ${config.nirix.config_root}.account;
 in
 {
   config = {
