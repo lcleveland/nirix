@@ -17,13 +17,13 @@ in
       {
         programs.niri.settings = {
           binds = with inputs.niri.homeModules.config.lib.niri.actions; {
-            "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
-            "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
-            "Mod+D".action.spawn = lib.mkIf settings.desktop_environment.walker.enable [ "walker" ];
-            "Mod+Escape".action.spawn = lib.mkIf settings.applications.hyprlock.enable [ "hyprlock" ];
-            "Mod+Shift+Escape".action.spawn = [ "systemctl" "poweroff" ];
-            "Mod+E".action.spawn = lib.mkIf (settings.applications.yazi.enable && settings.applications.ghostty.enable) [ "ghostty" "-e" "yazi" ];
-            "Mod+T".action.spawn = lib.mkIf settings.applications.ghostty.enable [ "ghostty" ];
+            "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
+            "XF86AudioLowerVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
+            "Mod+D".action = lib.mkIf settings.desktop_environment.walker.enable spawn [ "walker" ];
+            "Mod+Escape".action = lib.mkIf settings.applications.hyprlock.enable spawn [ "hyprlock" ];
+            "Mod+Shift+Escape".action = spawn [ "systemctl" "poweroff" ];
+            "Mod+E".action = lib.mkIf (settings.applications.yazi.enable && settings.applications.ghostty.enable) spawn [ "ghostty" "-e" "yazi" ];
+            "Mod+T".action = lib.mkIf settings.applications.ghostty.enable spawn [ "ghostty" ];
             "Mod+Q".action = close-window;
             "Mod+Left".action = focus-column-left;
             "Mod+Down".action = focus-window-down;
@@ -97,10 +97,10 @@ in
             "Mod+F".action = maximize-column;
             "Mod+Shift+F".action = fullscreen-window;
             "Mod+C".action = center-column;
-            "Mod+Minus".action.set-column-width = "-10%";
-            "Mod+Equal".action.set-column-width = "+10%";
-            "Mod+Shift+Minus".action.set-window-height = "-10%";
-            "Mod+Shift+Equal".action.set-window-height = "+10%";
+            "Mod+Minus".action = set-column-width "-10%";
+            "Mod+Equal".action = set-column-width "+10%";
+            "Mod+Shift+Minus".action = set-window-height "-10%";
+            "Mod+Shift+Equal".action = set-window-height "+10%";
             "Print".action = screenshot;
             "Ctrl+Print".action = screenshot-screen;
             "Alt+Print".action = screenshot-window;
