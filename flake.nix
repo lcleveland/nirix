@@ -12,7 +12,6 @@
           home_manager.nixosModules.home-manager
           niri.nixosModules.niri
           walker.nixosModules.default
-          ./options.nix
           /etc/nixos/hardware-configuration.nix
         ];
       make_framework_16 = nixpkgs.lib.nixosSystem {
