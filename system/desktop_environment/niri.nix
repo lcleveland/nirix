@@ -5,6 +5,9 @@ let
   inherit (inputs.niri.lib.kdl) node plain leaf flag;
 in
 {
+  imports = lib.mkIf niri_settings.enable [
+    niri.nixosModules.niri
+  ];
   config = lib.mkIf niri_settings.enable {
     programs = {
       niri = {
