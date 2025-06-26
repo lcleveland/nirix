@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  qemu = config.nirix.config_root.applications.qemu;
+  qemu = config.nirix.system.applications.qemu;
 in
 {
   config = lib.mkIf qemu.enable {

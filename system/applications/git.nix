@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  git = config.nirix.config_root.applications.git;
+  git = config.nirix.system.applications.git;
 in
 {
   config = lib.mkIf git.enable {

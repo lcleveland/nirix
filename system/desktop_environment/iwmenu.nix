@@ -1,7 +1,7 @@
 { config, inputs, lib, pkgs, ... }:
 let
-  iwmenu = config.nirix.config_rootdesktop_environment.iwmenu;
-  nix = config.nirix.config_root.nix;
+  iwmenu = config.nirix.system.desktop_environment.iwmenu;
+  nix = config.nirix.system.nix;
 in
 {
   config = lib.mkIf iwmenu.enable {

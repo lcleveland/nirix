@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  cpu = config.nirix.config_root.cpu;
+  cpu = config.nirix.system.cpu;
 in
 {
   config = {

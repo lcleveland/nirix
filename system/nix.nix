@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  nix = config.nirix.config_root.nix;
+  nix = config.nirix.system.nix;
 in
 {
   config = {

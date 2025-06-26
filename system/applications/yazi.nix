@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  yazi = config.nirix.config_root.applications.yazi;
+  yazi = config.nirix.system.applications.yazi;
 in
 {
   config = lib.mkIf yazi.enable {

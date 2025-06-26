@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  network = config.nirix.config_root.network;
+  network = config.nirix.system.network;
 in
 {
   config = {
