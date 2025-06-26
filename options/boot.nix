@@ -9,6 +9,13 @@
           				Whether the EFI variables can be modified by the kernel.
           			'';
       };
+      systemd.enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = ''
+            				Whether to enable the systemd boot service.
+            			'';
+      };
     };
     kernel.kernel_package = lib.mkOption {
       type = lib.types.attrs;
@@ -16,13 +23,6 @@
       description = ''
             					The kernel package to use.
             				'';
-    };
-    systemd.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = ''
-            				Whether to enable the systemd boot service.
-            			'';
     };
   };
 }
