@@ -1,19 +1,18 @@
 { config, inputs, lib, niri, nixpkgs, pkgs, ... }:
 let
-  niri = config.nirix.system.desktop_environment.niri;
+  niri_settings = config.nirix.system.desktop_environment.niri;
   settings = config.nirix.system;
   inherit (inputs.niri.lib.kdl) node plain leaf flag;
 in
 {
-  imports = [ inputs.niri.nixosModules.niri ];
-  config = lib.mkIf niri.enable {
+  config = lib.mkIf niri_settings.enable {
     programs = {
       niri = {
         enable = true;
         package = pkgs.niri-stable;
       };
     };
-    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+    nixpkgs.overlays = [ niri.overlays.niri ];
     home-manager.sharedModules = [
       {
         programs.niri.settings = {
