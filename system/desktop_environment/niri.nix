@@ -12,7 +12,11 @@ in
       };
     };
     home-manager.sharedModules = [
-      ({ config, lib, ... }:
+      ({ config, lib, nixosConfig, ... }:
+        let
+          settings = nixosConfig.nirix.system;
+          niri_settings = settings.desktop_environment.niri;
+        in
         {
           programs.niri.settings = {
             binds = with config.lib.niri.actions; {
