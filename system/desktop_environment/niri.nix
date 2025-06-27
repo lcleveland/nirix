@@ -25,8 +25,8 @@ in
               "Mod+D".action = lib.mkIf (settings.desktop_environment.walker.enable) (spawn [ "walker" ]);
               "Mod+Escape".action = lib.mkIf (settings.applications.hyprlock.enable) (spawn [ "hyprlock" ]);
               "Mod+Shift+Escape".action = spawn [ "systemctl" "poweroff" ];
-              "Mod+E".action = lib.mkIf (settings.applications.yazi.enable && settings.applications.ghostty.enable) spawn [ "ghostty" "-e" "yazi" ];
-              "Mod+T".action = lib.mkIf (settings.applications.ghostty.enable) spawn [ "ghostty" ];
+              "Mod+E".action = lib.mkIf (settings.applications.yazi.enable && settings.applications.ghostty.enable) (spawn [ "ghostty" "-e" "yazi" ]);
+              "Mod+T".action = lib.mkIf (settings.applications.ghostty.enable) (spawn [ "ghostty" ]);
               "Mod+Q".action = close-window;
               "Mod+Left".action = focus-column-left;
               "Mod+Down".action = focus-window-down;
