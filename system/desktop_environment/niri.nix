@@ -12,6 +12,7 @@ in
       };
     };
     home-manager.sharedModules = [
+      inputs.niri.homeModules.config
       {
         programs.niri.settings = {
           binds = (with config.lib.niri.actions; {
