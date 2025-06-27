@@ -15,6 +15,7 @@ in
     nixpkgs.overlays = [ niri.overlays.niri ];
     home-manager.sharedModules = [
       {
+        imports = [ inputs.niri.homeModules.config ];
         programs.niri.settings = {
           binds = lib.mkIf (lib.hasAttrByPath [ "niri" "actions" ] config.lib) (with config.lib.niri.actions; {
             "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
