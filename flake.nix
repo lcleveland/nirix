@@ -18,6 +18,11 @@
         modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
         specialArgs = { inherit inputs; };
       };
+
+      niri_lib = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ ./niri.nix ];
+      }.config.lib.niri;
     in
     {
       nixosConfigurations = {
