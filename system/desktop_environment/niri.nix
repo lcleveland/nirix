@@ -15,7 +15,7 @@ in
       ({ config, lib, ... }:
         {
           programs.niri.settings = {
-            binds = (with lib.niri.actions; {
+            binds = with lib.niri.actions; {
               "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
               "XF86AudioLowerVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
               "Mod+D".action = lib.mkIf settings.desktop_environment.walker.enable spawn [ "walker" ];
@@ -105,7 +105,7 @@ in
               "Alt+Print".action = screenshot-window;
               "Mod+Shift+E".action = quit;
               "Mod+Shift+P".action = power-off-monitors;
-            });
+            };
             hotkey-overlay = {
               skip-at-startup = true;
             };
