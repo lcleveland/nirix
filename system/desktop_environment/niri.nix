@@ -4,6 +4,7 @@ let
 in
 {
   config = lib.mkIf niri_settings.enable {
+    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
     programs = {
       niri = {
         enable = true;
