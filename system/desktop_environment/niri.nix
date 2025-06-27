@@ -9,7 +9,6 @@ in
     programs = {
       niri = {
         enable = true;
-        package = pkgs.niri-stable;
       };
     };
     home-manager.sharedModules = [
