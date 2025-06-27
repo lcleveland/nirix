@@ -1,8 +1,6 @@
 { config, inputs, lib, nixpkgs, pkgs, ... }:
 let
   niri_settings = config.nirix.system.desktop_environment.niri;
-  settings = config.nirix.system;
-  inherit (inputs.niri.lib.kdl) node plain leaf flag;
 in
 {
   config = lib.mkIf niri_settings.enable {
