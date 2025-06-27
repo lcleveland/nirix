@@ -16,8 +16,6 @@
         (import_modules ./options) ++
         (import_modules ./system) ++
         nirix_users.nixosModules.default;
-
-      nixpkgs.overlays = [ niri.overlays.niri ];
       make_framework_16 = nixpkgs.lib.nixosSystem {
         modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
         specialArgs = { inherit inputs; };
