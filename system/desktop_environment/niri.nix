@@ -1,4 +1,4 @@
-{ config, inputs, lib, niri, nixpkgs, pkgs, ... }:
+{ config, inputs, lib, nixpkgs, pkgs, ... }:
 let
   niri_settings = config.nirix.system.desktop_environment.niri;
   settings = config.nirix.system;
@@ -127,7 +127,7 @@ in
               background-color = settings.desktop_environment.theme.colors.compositor_background;
             };
           };
-          prefer-no-csd = niri.prefer_no_csd;
+          prefer-no-csd = niri_settings.prefer_no_csd;
           spawn-at-startup = [
             (lib.mkIf settings.desktop_environment.waybar.enable { command = [ "waybar" ]; })
           ];
