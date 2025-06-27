@@ -17,7 +17,7 @@ in
       {
         actions = import inputs.niri.homeModules.config.lib.niri.acitons;
         programs.niri.settings = {
-          binds = with config.lib.niri.actions; {
+          binds = with actions; {
             "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
             "XF86AudioLowerVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
             "Mod+D".action = lib.mkIf settings.desktop_environment.walker.enable spawn [ "walker" ];
