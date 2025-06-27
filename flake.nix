@@ -8,6 +8,7 @@
       core_modules =
         [
           niri.nixosModules.niri
+          niri.homeModules.niri
           home_manager.nixosModules.home-manager
           walker.nixosModules.default
           /etc/nixos/hardware-configuration.nix
