@@ -13,7 +13,6 @@ in
     };
     home-manager.sharedModules = [
       {
-        imports = [ inputs.niri.homeModules.config ];
         programs.niri.settings = {
           binds = (with config.lib.niri.actions; {
             "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
