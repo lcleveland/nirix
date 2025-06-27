@@ -3,6 +3,7 @@ let
   niri_settings = config.nirix.system.desktop_environment.niri;
   settings = config.nirix.system;
   inherit (inputs.niri.lib.kdl) node plain leaf flag;
+  niriActions = lib.attrByPath [ "niri" "actions" ] { } config.lib;
 in
 {
   config = lib.mkIf niri_settings.enable {
@@ -15,9 +16,8 @@ in
     nixpkgs.overlays = [ niri.overlays.niri ];
     home-manager.sharedModules = [
       {
-        imports = [ inputs.niri.homeModules.config ];
         programs.niri.settings = {
-          binds = lib.mkIf (lib.hasAttrByPath [ "niri" "actions" ] config.lib) (with config.lib.niri.actions; {
+          binds = lib.mkIf (niriActions != { }) (with config.lib.niri.actions; {
             "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
             "XF86AudioLowerVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
             "Mod+D".action = lib.mkIf settings.desktop_environment.walker.enable spawn [ "walker" ];
