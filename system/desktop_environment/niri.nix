@@ -15,7 +15,7 @@ in
       {
         programs.niri.settings =
           let
-            niri_actions = import inputs.niri.homeModules.config.lib.niri.acitons;
+            niri_actions = import inputs.niri.homeModules.config.lib.niri.actions;
           in
           {
             binds = (with niri_actions; {
