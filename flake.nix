@@ -5,15 +5,16 @@
     let
       inputs = core_inputs // nirix_users.inputs;
       import_modules = import ./resources/nix/import_modules.nix;
-      core_modules = (import_modules ./options) ++
-        (import_modules ./system) ++
-        nirix_users.nixosModules.default ++
+      core_modules =
         [
           niri.nixosModules.niri
           home_manager.nixosModules.home-manager
           walker.nixosModules.default
           /etc/nixos/hardware-configuration.nix
-        ];
+        ] ++
+        (import_modules ./options) ++
+        (import_modules ./system) ++
+        nirix_users.nixosModules.default;
       make_framework_16 = nixpkgs.lib.nixosSystem {
         modules = core_modules ++ [ nixos_hardware.nixosModules.framework-16-7040-amd ];
         specialArgs = { inherit inputs; };
