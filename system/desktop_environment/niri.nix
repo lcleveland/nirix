@@ -12,7 +12,6 @@ in
         package = pkgs.niri-stable;
       };
     };
-    nixpkgs.overlays = [ niri.overlays.niri ];
     home-manager.sharedModules = [
       {
         programs.niri.settings = {
