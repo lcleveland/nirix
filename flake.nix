@@ -19,10 +19,7 @@
         specialArgs = { inherit inputs; };
       };
 
-      niri_lib = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ ./niri.nix ];
-      }.config.lib.niri;
+      niri_lib = niri.config.lib.niri;
     in
     {
       nixosConfigurations = {
