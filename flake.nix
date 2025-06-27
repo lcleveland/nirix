@@ -9,7 +9,6 @@
         [
           home_manager.nixosModules.home-manager
           niri.nixosModules.niri
-          ./resources/nix/niri_lib_bridge.nix
           walker.nixosModules.default
           /etc/nixos/hardware-configuration.nix
         ] ++
