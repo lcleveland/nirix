@@ -22,7 +22,7 @@ in
             binds = with config.lib.niri.actions; {
               "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
               "XF86AudioLowerVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
-              "Mod+D".action = lib.mkIf (settings.desktop_environment.walker.enable spawn) [ "walker" ];
+              "Mod+D".action = lib.mkIf (settings.desktop_environment.walker.enable) spawn [ "walker" ];
               "Mod+Escape".action = lib.mkIf (settings.applications.hyprlock.enable) spawn [ "hyprlock" ];
               "Mod+Shift+Escape".action = spawn [ "systemctl" "poweroff" ];
               "Mod+E".action = lib.mkIf (settings.applications.yazi.enable && settings.applications.ghostty.enable) spawn [ "ghostty" "-e" "yazi" ];
