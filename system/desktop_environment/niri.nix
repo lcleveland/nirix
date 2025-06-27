@@ -1,4 +1,4 @@
-{ config, inputs, lib, niri, osConfig, nixpkgs, pkgs, ... }:
+{ config, inputs, lib, niri, nixpkgs, pkgs, ... }:
 let
   niri_settings = config.nirix.system.desktop_environment.niri;
   settings = config.nirix.system;
@@ -16,7 +16,7 @@ in
     home-manager.sharedModules = [
       {
         programs.niri.settings = {
-          binds = with osConfig.lib.niri.actions; {
+          binds = with config.lib.niri.actions; {
             "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
             "XF86AudioLowerVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
             "Mod+D".action = lib.mkIf settings.desktop_environment.walker.enable spawn [ "walker" ];

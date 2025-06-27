@@ -7,9 +7,9 @@
       import_modules = import ./resources/nix/import_modules.nix;
       core_modules =
         [
+          home_manager.nixosModules.home-manager
           niri.nixosModules.niri
           niri.homeModules.niri
-          home_manager.nixosModules.home-manager
           walker.nixosModules.default
           /etc/nixos/hardware-configuration.nix
         ] ++
