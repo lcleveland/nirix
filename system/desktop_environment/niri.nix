@@ -16,7 +16,7 @@ in
     home-manager.sharedModules = [
       {
         programs.niri.settings = {
-          binds = lib.mkAfter (with config.lib.niri.actions; {
+          binds = lib.mkIf (lib.hasAttrByPath [ "niri" "actions" ] config.lib) (with config.lib.niri.actions; {
             "XF86AudioRaiseVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
             "XF86AudioLowerVolume".action = spawn [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
             "Mod+D".action = lib.mkIf settings.desktop_environment.walker.enable spawn [ "walker" ];
