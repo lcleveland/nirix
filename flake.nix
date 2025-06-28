@@ -1,7 +1,7 @@
 {
   description = "Nirix: A minimal, keyboard-centric NixOS configuration using the Niri TWM";
 
-  outputs = { self, home_manager, iwmenu, niri, nirix_users, nixos_hardware, nixpkgs, walker, zen_browser, ... }@core_inputs:
+  outputs = { self, bzmenu, home_manager, iwmenu, niri, nirix_users, nixos_hardware, nixpkgs, walker, zen_browser, ... }@core_inputs:
     let
       inputs = core_inputs // nirix_users.inputs;
       import_modules = import ./resources/nix/import_modules.nix;
@@ -27,6 +27,9 @@
     };
 
   inputs = {
+    bzmenu = {
+      url = "github:e-tho/bzmenu";
+    };
     home_manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager?ref=release-25.05";
