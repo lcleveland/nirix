@@ -13,7 +13,7 @@ in
               layer = "top";
               position = "top";
               height = 24;
-              modules-right = [ "pulseaudio" "network" "cpu" "memory" "battery" "tray" "clock" ];
+              modules-right = [ "pulseaudio" "network" "bluetooth" "cpu" "memory" "battery" "tray" "clock" ];
               "tray" = {
                 spacing = 10;
               };
@@ -39,6 +39,19 @@ in
                 format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
                 format-disconnected = "Disconnected ⚠";
                 on-click = "iwmenu -l walker";
+              };
+              "bluetooth" = {
+                format = "{icon} {status}";
+                format-icons = {
+                  headphones = "";
+                  hands-free = "";
+                  headset = "";
+                  phone = "";
+                  portable = "";
+                  car = "";
+                  default = [ "" ];
+                };
+                on-click = "bzmenu -l walker";
               };
               "pulseaudio" = {
                 format = "{volume}%  {icon}";
