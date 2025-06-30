@@ -251,11 +251,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1750857817,
-        "narHash": "sha256-IZM9abXkglf3LK3ZxKCQkELuBMvBKu/x1vQVtkSfRXc=",
+        "lastModified": 1751291078,
+        "narHash": "sha256-jso9Wacp8Ag/0M204DfG+TfX7OgQUU2+4BGJy2ee8Y0=",
         "owner": "lcleveland",
         "repo": "nirix.users",
-        "rev": "14a97cf058e88ad51fd60bce8f2af6a552bcff8e",
+        "rev": "1b5ca215bcff239b211d626546d2f2aabd8d4db8",
         "type": "github"
       },
       "original": {
