@@ -3,7 +3,10 @@ let
   bluetooth = config.nirix.system.bluetooth;
 in
 {
-  config = {
-    hardware.bluetooth.enable = bluetooth.enable;
+  config = lib.mkIf (bluetooth.enable) {
+    hardware.bluetooth = {
+      enable = bluetooth.enable;
+      powerOnBoot = bluetooth.power_on_boot;
+    };
   };
 }
