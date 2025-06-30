@@ -4,6 +4,7 @@ let
 in
 {
   config = lib.mkIf (bluetooth.enable) {
+    environment.systemPackages = lib.mkIf (bluetooth.bluez.enable) [ pkgs.bluez ];
     hardware.bluetooth = {
       enable = bluetooth.enable;
       powerOnBoot = bluetooth.power_on_boot;
