@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  dunst_settings = config.nirix.desktop_environment.dunst;
+  dunst_settings = config.nirix.system.desktop_environment.dunst;
 in
 {
   config = lib.mkIf dunst_settings.enable {
