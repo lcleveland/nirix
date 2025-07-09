@@ -5,7 +5,7 @@ in
 {
   config = {
     environment.systemPackages = lib.mkIf (swww.enable) [
-      inputs.swww.packages.${config.nirix.system.host_platform}.swww
+      inputs.swww.packages.${config.nirix.system.nix.host_platform}.swww
     ];
   };
 }
