@@ -129,6 +129,7 @@ in
             spawn-at-startup = [
               (lib.mkIf settings.desktop_environment.waybar.enable { command = [ "waybar" ]; })
               (lib.mkIf settings.desktop_environment.swww.enable { command = [ "swww-daemon" ]; })
+              (lib.mkIf settings.desktop_environment.swww.enable { command = [ "swww" "clear" "--all" "${settings.desktop_environment.theme.compositor_background}" ]; })
             ];
           };
         }
