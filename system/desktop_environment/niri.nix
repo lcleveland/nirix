@@ -129,7 +129,6 @@ in
             spawn-at-startup = [
               (lib.mkIf settings.desktop_environment.waybar.enable { command = [ "waybar" ]; })
               (lib.mkIf settings.desktop_environment.swww.enable { command = [ "swww-daemon" ]; })
-              (lib.mkIf settings.desktop_environment.swww.enable { command = [ "sh" "-c" "swww clear --all 000000" ]; })
             ];
           };
         }
