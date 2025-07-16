@@ -128,7 +128,7 @@ in
             prefer-no-csd = niri_settings.prefer_no_csd;
             spawn-at-startup = [
               (lib.mkIf settings.desktop_environment.waybar.enable { command = [ "waybar" ]; })
-              (lib.mkIf settings.desktop_environment.swww.enable { command = [ "swww-daemon" ]; })
+              (lib.mkIf settings.desktop_environment.swww.enable { command = [ "swww-daemon" "&&" "swww" "clear" "--all" "${settings.desktop_environment.theme.colors.compositor_background}" ]; })
             ];
           };
         }
