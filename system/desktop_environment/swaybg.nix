@@ -4,8 +4,8 @@ let
 in
 {
   config = lib.mkIf (swaybg.enable) {
-    environment.systemPackages = with pkgs; [
-      swaybg
+    environment.systemPackages = [
+      pkgs.swaybg
     ];
   };
 }
