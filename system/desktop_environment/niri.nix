@@ -125,6 +125,7 @@ in
                 tap = true;
               };
             };
+            overview.backdrop-color = settings.desktop_environment.theme.colors.overview_background;
             prefer-no-csd = niri_settings.prefer_no_csd;
             spawn-at-startup = [
               (lib.mkIf settings.desktop_environment.waybar.enable { command = [ "waybar" ]; })
